@@ -1,0 +1,53 @@
+<style>
+    body {
+        text-align: center;
+        background: #f2f6f8;
+    }
+
+    .img {
+        position: absolute;
+        z-index: 1;
+    }
+
+    #container {
+        display: inline-block;
+        width: 578px;
+        height: 438px;
+        margin: 0 auto;
+        background: black;
+        position: relative;
+        border: 5px solid black;
+        border-radius: 10px;
+        box-shadow: 0 5px 50px #333
+    }
+
+    #mapCanvas {
+        position: relative;
+        z-index: -1;
+    }
+</style>
+
+
+
+<div id="container">
+    <img #image class='img' src="assets/images/campusmap.png" alt="exterior campus map" usemap="#image-map" />
+
+    <!-- (click)="open()" -->
+    <canvas id="mapCanvas" #canvasEl width=578 height=438>
+        <map name="image-map">
+            <area alt="parkingD" title="parking D" onclick="" href="#" coords="155,258,198,287" shape="rect">
+            <area alt="parkingF" title="parking F" href="#" coords="272,279,394,304" shape="rect">
+            <area alt="parkingC" title="parking C" href="#" coords="130,141,143,180" shape="rect">
+            <area alt="parkingB" title="parking B" href="#" coords="328,174,295,151" shape="rect">
+            <area alt="parkingF" title="parking F" href="#" coords="294,188,329,212" shape="rect">
+        </map>
+    </canvas>
+
+
+</div>
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>Item 1</button>
+    <button mat-menu-item>Item 2</button>
+</mat-menu>
