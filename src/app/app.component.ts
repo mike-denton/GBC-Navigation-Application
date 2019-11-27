@@ -8,8 +8,11 @@ import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@ang
 import { MatMenuTrigger } from '@angular/material/menu';
 
 // Current Issues
-// - Draw path is not showing due to z-index of canvas = -1 (In order of image mapping to work)
+// (fixed) Draw path is not showing due to z-index of canvas = -1 (In order of image mapping to work)
 // - Attempt to instantiate Angular Material design menu list object when onclick of image mapping (MatMenuTrigger)
+
+// New Fixes
+// - Draw path is working with canvas on top
 
 @Component({
   selector: 'my-app',

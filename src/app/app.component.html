@@ -1,15 +1,15 @@
 <div id="container">
     <img #image class='img' src="assets/images/campusmap.png" alt="exterior campus map" usemap="#image-map" />
-
+    
     <!-- (click)="open()" -->
-    <canvas id="mapCanvas" #canvasEl width=578 height=438>
         <map name="image-map">
-            <area alt="parkingD" title="parking D" onclick="" href="#" coords="155,258,198,287" shape="rect">
-            <area alt="parkingF" title="parking F" href="#" coords="272,279,394,304" shape="rect">
-            <area alt="parkingC" title="parking C" href="#" coords="130,141,143,180" shape="rect">
-            <area alt="parkingB" title="parking B" href="#" coords="328,174,295,151" shape="rect">
-            <area alt="parkingF" title="parking F" href="#" coords="294,188,329,212" shape="rect">
+            <area alt="parkingD" title="parking D" onclick="alert('clicked parkingD')" href="#" coords="155,258,198,287" shape="rect">
+            <area alt="parkingA" title="parking A" onclick="alert('clicked parkingA')" href="#" coords="272,279,394,304" shape="rect">
+            <area alt="parkingC" title="parking C" onclick="alert('clicked parkingC')" href="#" coords="130,141,143,180" shape="rect">
+            <area alt="parkingB" title="parking B" onclick="alert('clicked parkingB')" href="#" coords="328,174,295,151" shape="rect">
+            <area alt="parkingF" title="parking F" onclick="alert('clicked parkingF')" href="#" coords="294,188,329,212" shape="rect">
         </map>
+        <canvas id="mapCanvas" #canvasEl width=578 height=438>
     </canvas>
 </div>
 
