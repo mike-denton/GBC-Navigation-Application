@@ -26,16 +26,25 @@ export class AppComponent implements AfterViewInit {
   private width: 578;
   private height: 438;
 
+  //marker object
+  private markerObj = new Image();
+  private cBuilding;
+
   // Attempt to instantiate object when clicking on a building
   @ViewChild(MatMenuTrigger, {static:true}) trigger: MatMenuTrigger;
   
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) {
+  }
 
   ngAfterViewInit() {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
-  
+    this.cBuilding = document.getElementById("cBuilding");
+
     this.draw();
     this.menu();
+
+    this.markerObj.src = 'assets/images/map-marker.png';
+    this.cBuilding.addEventListener("click", (e:Event) => this.drawMarker());
   }
 
   private draw() {
@@ -59,6 +68,10 @@ export class AppComponent implements AfterViewInit {
     this.context.fillText("GBC Navigation", x, y);
     */
     
+  }
+
+  private drawMarker(){
+    this.context.drawImage(this.markerObj, 210,120);
   }
 
   private menu(){
