@@ -36,8 +36,7 @@ export class AppComponent implements AfterViewInit {
   // origin marker object
   private originMarker = new Image();
 
-
-  //menu item 
+  // buildings menu item 
   private parkingA;
 
   // Attempt to instantiate object when clicking on a building
@@ -55,10 +54,10 @@ export class AppComponent implements AfterViewInit {
     // origin marker image
     this.originMarker.src = 'assets/images/map-origin-marker.png';
 
-
-    // to open building menu
+    // to open building menua draw origin marker
     this.parkingA = document.getElementById("parkingA");
-    this.parkingA.addEventListener("click", (e:Event) => { 
+    this.parkingA.addEventListener("click", (e:Event) => {
+      this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
       this.drawOriginMarker() 
       this.menu()
     });
@@ -69,23 +68,42 @@ export class AppComponent implements AfterViewInit {
   }
 
   private drawDestinationMarker(){
-    this.context.drawImage(this.destinationMarker, 215,110);
-    this.drawRouteToC()
+    let btnId: string = (event.target as Element).id;
+    switch (btnId){
+      case 'cBuildingBtn':
+        this.context.drawImage(this.destinationMarker, 215,110);
+        this.drawPath(btnId);
+        break;
+      case 'dBuildingBtn':
+        this.context.drawImage(this.destinationMarker, 175,180);
+        break;
+      case 'eBuildingBtn':
+        this.context.drawImage(this.destinationMarker, 227, 165);
+        break;
+      default:
+        break;
+    }
   }
 
   private drawOriginMarker(){
+    let parkingId: string = (event.target as Element).id;
     this.context.drawImage(this.originMarker, 315,260);
   }
 
-  private drawRouteToC() {
-
-    // draw path
+  private drawPath(btnId : string) {
     this.context.beginPath();
-    this.context.moveTo(335,270);
-    this.context.lineTo(280, 270);
-    this.context.lineTo(280, 139);
-    this.context.lineTo(230, 139);
     this.context.lineWidth = 5;
-    this.context.stroke();  
+    this.context.strokeStyle = "lime";
+    switch (btnId){
+      case 'cBuildingBtn':
+        this.context.moveTo(335,270);
+        this.context.lineTo(280, 270);
+        this.context.lineTo(280, 139);
+        this.context.lineTo(230, 139);
+        break;
+      default:
+        break;
+    }
+    this.context.stroke();
   }
 }

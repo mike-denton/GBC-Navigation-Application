@@ -2,11 +2,10 @@
 
 <!-- <div id="container"  (mousemove)="coordinates($event)"> -->
     <div id="container">
-    <img #image class='img' src="assets/images/campusmap.png" alt="exterior campus map" usemap="#image-map" />
+    <img #image class='img' draggable="false" src="assets/images/campusmap.png" alt="exterior campus map" usemap="#image-map" />
     
     <!-- (click)="open()" -->
         <map name="image-map">
-            <area alt="C building" title="C building" href="#" coords="269,106,236,106,238,113,221,114,220,122,207,125,205,144,189,147,168,143,168,158,177,160,176,175,193,175,193,188,220,190,220,168,228,166,231,154,270,154" shape="poly">
             <area alt="parkingD" title="parking D" onclick="alert('clicked parkingD')" href="#" coords="155,258,198,287" shape="rect">
             <area alt="parkingA" id="parkingA" title="parking A" [matMenuTriggerFor]="menu" href="#" coords="272,279,394,304" shape="rect">
             <area alt="parkingC" title="parking C" onclick="alert('clicked parkingC')" href="#" coords="130,141,143,180" shape="rect">
@@ -19,6 +18,6 @@
 
 <mat-menu #menu="matMenu">
     <button (click)="drawDestinationMarker()" id="cBuildingBtn" mat-menu-item>Building C</button>
-    <button mat-menu-item>Building D</button>
-    <button mat-menu-item>Building E</button>
+    <button (click)="drawDestinationMarker()" id="dBuildingBtn" mat-menu-item>Building D</button>
+    <button (click)="drawDestinationMarker()" id="eBuildingBtn" mat-menu-item>Building E</button>
 </mat-menu>
