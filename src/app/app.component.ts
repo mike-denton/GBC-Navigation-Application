@@ -76,8 +76,10 @@ export class AppComponent implements AfterViewInit {
         break;
       case 'dBuildingBtn':
         this.context.drawImage(this.destinationMarker, 175,180);
+        this.drawPath(btnId);
         break;
       case 'eBuildingBtn':
+        this.drawPath(btnId);
         this.context.drawImage(this.destinationMarker, 227, 165);
         break;
       default:
@@ -96,11 +98,28 @@ export class AppComponent implements AfterViewInit {
     this.context.strokeStyle = "lime";
     switch (btnId){
       case 'cBuildingBtn':
-        this.context.moveTo(335,270);
+        this.context.moveTo(324,270);
         this.context.lineTo(280, 270);
         this.context.lineTo(280, 139);
         this.context.lineTo(230, 139);
         break;
+      case 'dBuildingBtn':
+        this.context.moveTo(324,270);
+        this.context.lineTo(280, 270);
+        this.context.lineTo(280, 230);
+        this.context.lineTo(225, 229);
+        this.context.lineTo(205, 240);
+        this.context.lineTo(153, 240);
+        this.context.lineTo(153, 210);
+        this.context.lineTo(190, 210);
+        break;
+      case 'eBuildingBtn':
+          this.context.moveTo(324,270);
+          this.context.lineTo(280, 270);
+          this.context.lineTo(280, 230);
+          this.context.lineTo(243, 230);
+          this.context.lineTo(243, 197);
+          break;
       default:
         break;
     }
