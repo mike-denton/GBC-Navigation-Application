@@ -1,19 +1,5 @@
-// Modified from Prof Mike Dentons - Various repo
-
-// Tasks:
-//-Plotting the routes via 2 drop downs ie. parking lot and building. 
-//-GPS location pin (optional)
-
 import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
-
-// Current Issues
-// (fixed) Draw path is not showing due to z-index of canvas = -1 (In order of image mapping to work)
-// - Attempt to instantiate Angular Material design menu list object when onclick of image mapping (MatMenuTrigger)
-
-// New Fixes and Implementations
-// - Draw path is working with canvas on top
-// - Location marker on C building completed
 
 @Component({
   selector: 'my-app',
@@ -22,14 +8,34 @@ import { MatMenuTrigger } from '@angular/material/menu';
 })
 export class AppComponent implements AfterViewInit {
 
+  // just to get mouse coords
+  /*
+  event: MouseEvent;
+  clientX = 0;
+  clientY = 0;
+
+  onEvent(event: MouseEvent): void {
+      this.event = event;
+  }
+
+  coordinates(event: MouseEvent): void {
+      this.clientX = event.clientX;
+      this.clientY = event.clientY;
+
+  }
+  */
+
   @ViewChild('canvasEl', {static: true}) canvasEl: ElementRef;  
   private context: CanvasRenderingContext2D;
   private width: 578;
   private height: 438;
 
-  //marker object
-  private markerObj = new Image();
-  private cBuilding;
+  // destination marker object
+  private destinationMarker = new Image();
+
+  // origin marker object
+  private originMarker = new Image();
+
 
   //menu item 
   private parkingA;
@@ -42,46 +48,44 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
-    this.cBuilding = document.getElementById("cBuilding");
 
+    // destination marker image
+    this.destinationMarker.src = 'assets/images/map-destination-marker.png';
+
+    // origin marker image
+    this.originMarker.src = 'assets/images/map-origin-marker.png';
+
+
+    // to open building menu
     this.parkingA = document.getElementById("parkingA");
-    this.parkingA.addEventListener("click", (e:Event) => this.menu());
-
-    this.draw();
-
-    this.markerObj.src = 'assets/images/map-marker.png';
-    this.cBuilding.addEventListener("click", (e:Event) => this.drawMarker());
-    
+    this.parkingA.addEventListener("click", (e:Event) => { 
+      this.drawOriginMarker() 
+      this.menu()
+    });
   }
 
   private menu(){
     this.trigger.openMenu();
   }
 
-  private draw() {
-
-    // draw triangle path
-    this.context.beginPath();
-    this.context.moveTo(125, 30);
-    this.context.lineTo(31.9, 63.2);
-    this.context.lineTo(46.1, 186.3);
-    this.context.lineWidth = 10;
-    this.context.closePath();
-    this.context.stroke();  
-    
-    /*
-    // add text to canvas
-    this.context.font = "30px Arial";
-    this.context.textBaseline = 'middle';
-    this.context.textAlign = 'center';
-    const x = (this.canvasEl.nativeElement as HTMLCanvasElement).width / 2;
-    const y = (this.canvasEl.nativeElement as HTMLCanvasElement).height / 2;
-    this.context.fillText("GBC Navigation", x, y);
-    */
-    
+  private drawDestinationMarker(){
+    this.context.drawImage(this.destinationMarker, 215,110);
+    this.drawRouteToC()
   }
 
-  private drawMarker(){
-    this.context.drawImage(this.markerObj, 210,120);
+  private drawOriginMarker(){
+    this.context.drawImage(this.originMarker, 315,260);
+  }
+
+  private drawRouteToC() {
+
+    // draw path
+    this.context.beginPath();
+    this.context.moveTo(335,270);
+    this.context.lineTo(280, 270);
+    this.context.lineTo(280, 139);
+    this.context.lineTo(230, 139);
+    this.context.lineWidth = 5;
+    this.context.stroke();  
   }
 }
