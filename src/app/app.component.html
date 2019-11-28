@@ -5,7 +5,7 @@
         <map name="image-map">
             <area alt="C building" title="C building" id="cBuilding" href="#" coords="269,106,236,106,238,113,221,114,220,122,207,125,205,144,189,147,168,143,168,158,177,160,176,175,193,175,193,188,220,190,220,168,228,166,231,154,270,154" shape="poly">
             <area alt="parkingD" title="parking D" onclick="alert('clicked parkingD')" href="#" coords="155,258,198,287" shape="rect">
-            <area alt="parkingA" title="parking A" onclick="alert('clicked parkingA')" href="#" coords="272,279,394,304" shape="rect">
+            <area alt="parkingA" title="parking A" [matMenuTriggerFor]="menu" id="parkingA" href="#" coords="272,279,394,304" shape="rect">
             <area alt="parkingC" title="parking C" onclick="alert('clicked parkingC')" href="#" coords="130,141,143,180" shape="rect">
             <area alt="parkingB" title="parking B" onclick="alert('clicked parkingB')" href="#" coords="328,174,295,151" shape="rect">
             <area alt="parkingF" title="parking F" onclick="alert('clicked parkingF')" href="#" coords="294,188,329,212" shape="rect">
@@ -14,8 +14,8 @@
     </canvas>
 </div>
 
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
+    <button mat-menu-item>Building C</button>
+    <button mat-menu-item>Building D</button>
+    <button mat-menu-item>Building E</button>
 </mat-menu>

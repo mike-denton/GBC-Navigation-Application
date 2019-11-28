@@ -11,8 +11,9 @@ import { MatMenuTrigger } from '@angular/material/menu';
 // (fixed) Draw path is not showing due to z-index of canvas = -1 (In order of image mapping to work)
 // - Attempt to instantiate Angular Material design menu list object when onclick of image mapping (MatMenuTrigger)
 
-// New Fixes
+// New Fixes and Implementations
 // - Draw path is working with canvas on top
+// - Location marker on C building completed
 
 @Component({
   selector: 'my-app',
@@ -30,6 +31,9 @@ export class AppComponent implements AfterViewInit {
   private markerObj = new Image();
   private cBuilding;
 
+  //menu item 
+  private parkingA;
+
   // Attempt to instantiate object when clicking on a building
   @ViewChild(MatMenuTrigger, {static:true}) trigger: MatMenuTrigger;
   
@@ -40,11 +44,18 @@ export class AppComponent implements AfterViewInit {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
     this.cBuilding = document.getElementById("cBuilding");
 
+    this.parkingA = document.getElementById("parkingA");
+    this.parkingA.addEventListener("click", (e:Event) => this.menu());
+
     this.draw();
-    this.menu();
 
     this.markerObj.src = 'assets/images/map-marker.png';
     this.cBuilding.addEventListener("click", (e:Event) => this.drawMarker());
+    
+  }
+
+  private menu(){
+    this.trigger.openMenu();
   }
 
   private draw() {
@@ -72,9 +83,5 @@ export class AppComponent implements AfterViewInit {
 
   private drawMarker(){
     this.context.drawImage(this.markerObj, 210,120);
-  }
-
-  private menu(){
-    this.trigger.openMenu();
   }
 }
