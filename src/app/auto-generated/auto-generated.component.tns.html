@@ -1,0 +1,17 @@
+<ActionBar title="GBC Navigation App"></ActionBar>
+
+<GridLayout>
+	<Image src="res://icon" (touch)="onTouch($event)"> </Image>
+
+	<!-- <ListPicker [items]="buildings" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker> -->
+</GridLayout>
+
+<StackLayout>
+	<DropDown #dd backroundColor="red" 
+		hint="Select Building"
+		itemsTextAlignment="center" 
+		[items]="buildings" 
+		[(ngModel)]="selectedIndex"
+		(selectedIndexChanged)="onchange($event)">
+	</DropDown> 
+</StackLayout>

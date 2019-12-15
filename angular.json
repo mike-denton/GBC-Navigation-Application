@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "canvas-app"
+    }
+  },
+  "defaultProject": "canvas-app",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }

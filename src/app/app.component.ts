@@ -6,6 +6,8 @@ import { MatMenuTrigger } from '@angular/material/menu';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
+
+// test change name
 export class AppComponent implements AfterViewInit {
 
   // just to get mouse coords

@@ -2,6 +2,10 @@
   "name": "canvas-app",
   "version": "0.0.0",
   "scripts": {
+    "android": "tns run android",
+    "ios": "tns run ios",
+    "mobile": "tns run",
+    "preview": "tns preview",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -21,12 +25,21 @@
     "@angular/platform-browser": "^8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.12",
     "@angular/router": "~8.2.12",
+    "@nativescript/schematics": "^0.7.3",
+    "@schematics/angular": "^8.3.20",
     "hammerjs": "^2.0.8",
+    "nativescript-angular": "~8.20.0",
+    "nativescript-theme-core": "~1.0.4",
+    "reflect-metadata": "~0.1.12",
     "rxjs": "~6.4.0",
+    "tns-core-modules": "~6.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
+    "nativescript-dev-webpack": "~1.3.0",
+    "@nativescript/schematics": "~0.7.0",
+    "@nativescript/tslint-rules": "~0.0.2",
     "@angular-devkit/build-angular": "~0.803.15",
     "@angular/cli": "^8.3.19",
     "@angular/compiler-cli": "~8.2.12",
@@ -46,5 +59,11 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "nativescript": {
+    "id": "org.nativescript.ngsample",
+    "tns-android": {
+      "version": "6.2.0"
+    }
   }
 }
