@@ -29,6 +29,8 @@
     "@schematics/angular": "^8.3.20",
     "hammerjs": "^2.0.8",
     "nativescript-angular": "~8.20.0",
+    "nativescript-canvas": "^2.1.9",
+    "nativescript-drop-down": "^5.0.4",
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.4.0",

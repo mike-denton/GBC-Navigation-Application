@@ -1,17 +1,21 @@
 <ActionBar title="GBC Navigation App"></ActionBar>
 
-<GridLayout>
-	<Image src="res://icon" (touch)="onTouch($event)"> </Image>
+<GridLayout> 
 
-	<!-- <ListPicker [items]="buildings" selectedIndex="0" (selectedIndexChange)="onSelectedIndexChanged($event)"></ListPicker> -->
+	<Image src="res://icon" (touch)="onTouch($event)"> </Image>
+	<Image [src]="markerImage" (touch)="onTouch($event)"> </Image>
+	<Label id='label' style="background-color: green; height:200; width:50;"></Label>
+
 </GridLayout>
+
+<!-- <CanvasView width="100" height="100" (draw)="draw()"></CanvasView> -->
 
 <StackLayout>
 	<DropDown #dd backroundColor="red" 
-		hint="Select Building"
+		hint="Select Building" 
 		itemsTextAlignment="center" 
-		[items]="buildings" 
-		[(ngModel)]="selectedIndex"
+		[items]="buildings"
+		[(ngModel)]="selectedIndex" 
 		(selectedIndexChanged)="onchange($event)">
-	</DropDown> 
+	</DropDown>
 </StackLayout>
