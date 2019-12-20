@@ -2,20 +2,25 @@
 
 <GridLayout> 
 
-	<Image src="res://icon" (touch)="onTouch($event)"> </Image>
-	<Image [src]="markerImage" (touch)="onTouch($event)"> </Image>
-	<Label id='label' style="background-color: green; height:200; width:50;"></Label>
+	<Image src="https://coned.georgebrown.ca/assets/0/124/125/163/b2c67e78-e9d8-4722-9fdc-d8c3f2e8246a.gif?n=4746" (touch)="onTouch($event)" verticalAlignment='top'> </Image>
+	<Image src="{{markerImage}}" verticalAlignment='top'> </Image>
+
+	<!-- test label for drawing -->
+	<!-- <Label id='label' style="background-color: green; height:200; width:50;" verticalAlignment='top'></Label>  -->
+
+	<StackLayout>
+		<DropDown #dd backroundColor="red" 
+			hint="Select Building" 
+			itemsTextAlignment="center" 
+			[items]="buildings"
+			[(ngModel)]="selectedIndex" 
+			(selectedIndexChanged)="onchange($event)">
+		</DropDown>
+	</StackLayout>
 
 </GridLayout>
 
 <!-- <CanvasView width="100" height="100" (draw)="draw()"></CanvasView> -->
 
-<StackLayout>
-	<DropDown #dd backroundColor="red" 
-		hint="Select Building" 
-		itemsTextAlignment="center" 
-		[items]="buildings"
-		[(ngModel)]="selectedIndex" 
-		(selectedIndexChanged)="onchange($event)">
-	</DropDown>
-</StackLayout>
+<!-- <canvas id="mapCanvas" #canvasEl width=578 height=438></canvas> -->
+
