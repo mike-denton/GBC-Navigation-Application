@@ -1,5 +1,7 @@
 {
   "name": "GBC-Navigation",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
