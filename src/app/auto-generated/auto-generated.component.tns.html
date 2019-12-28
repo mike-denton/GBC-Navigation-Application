@@ -1,12 +1,18 @@
 <ActionBar title="GBC Navigation App"></ActionBar>
 
-<GridLayout> 
+<Gridlayout>  
 
-	<Image src="https://coned.georgebrown.ca/assets/0/124/125/163/b2c67e78-e9d8-4722-9fdc-d8c3f2e8246a.gif?n=4746" (touch)="onTouch($event)" verticalAlignment='top'> </Image>
-	<Image src="{{markerImage}}" verticalAlignment='top'> </Image>
+	<Image src="~/images/campusmap.png" verticalAlignment='top' (touch)="onTouch($event)" stretch="aspectFit"> </Image>
+
+	<Image src="{{markerImage}}" verticalAlignment='center' style="height: 90px;"> </Image>
+
+<!-- 
+	<Button text="origin!" (touch)="test($event)" verticalAlignment='center' style='height: 100px; width: 400px; z-index: -1;' ></Button>
+	<Button text="destination!" (touch)="test2($event)" verticalAlignment='bottom' style='height: 100px; width: 400px; z-index: -1;'></Button>  
+ -->
 
 	<!-- test label for drawing -->
-	<!-- <Label id='label' style="background-color: green; height:200; width:50;" verticalAlignment='top'></Label>  -->
+	<!-- <Label id='label' style="background-color: green; height:200px; width:50px;" verticalAlignment='top' (touch)="test($event)"></Label>  -->
 
 	<StackLayout>
 		<DropDown #dd backroundColor="red" 
@@ -18,7 +24,7 @@
 		</DropDown>
 	</StackLayout>
 
-</GridLayout>
+</Gridlayout>>
 
 <!-- <CanvasView width="100" height="100" (draw)="draw()"></CanvasView> -->
 
