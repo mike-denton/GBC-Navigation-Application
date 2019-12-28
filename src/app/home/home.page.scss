@@ -2,11 +2,13 @@ ion-content{
     --ion-background-color:#666666;
 }
 
-.img {
-    position:absolute;
+#container {
+    width: 578px;
+    height: 438px;
+    position: absolute;
     left: 0;
     right: 0;
-    margin:0 auto;
-    top:50%;
-    transform:translateY(-50%);
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
 }
