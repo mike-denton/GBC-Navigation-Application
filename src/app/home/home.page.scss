@@ -14,3 +14,14 @@ ion-content{
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
+
+.img {
+    position: absolute;
+    z-index: 1;
+}
+
+#mapCanvas {
+    position: relative;
+    z-index: 1;
+    pointer-events: none
+}
