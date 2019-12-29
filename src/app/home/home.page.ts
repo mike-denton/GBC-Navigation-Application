@@ -13,14 +13,14 @@ export class HomePage {
   
   @ViewChild('canvasEl', {static: true}) canvasEl: ElementRef;  
   private context: CanvasRenderingContext2D;
+
   private width: 578;
+  
   private height: 438;
 
   private destinationMarker = new Image();
 
   private originMarker = new Image();
-
-  private parkingA;
 
   constructor(private pickerCtrl: PickerController,private renderer: Renderer2) {}
 
@@ -31,15 +31,15 @@ export class HomePage {
 
     this.originMarker.src = 'assets/images/map-origin-marker.png';
 
-    this.parkingA = document.getElementById("parkingA");
-    this.parkingA.addEventListener("click", (e:Event) => {
-      this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
-      this.drawOriginMarker() 
-    });
   }
 
-  private drawOriginMarker(){
-    this.context.drawImage(this.originMarker, 315,260);
+  private drawOriginMarker(event){
+    switch (event.target.id){
+      case 'parkingA':
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 315,260);
+        break;
+    }
   }
 
   private drawPath(btnId : string) {
