@@ -1,7 +1,6 @@
 import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -12,37 +11,57 @@ import { ThrowStmt } from '@angular/compiler';
 export class HomePage {
   
   @ViewChild('canvasEl', {static: true}) canvasEl: ElementRef;  
-  private context: CanvasRenderingContext2D;
 
+  private context: CanvasRenderingContext2D;
   private width: 578;
-  
   private height: 438;
 
-  private destinationMarker = new Image();
+  private parking;
 
+  private destinationMarker = new Image();
   private originMarker = new Image();
 
   constructor(private pickerCtrl: PickerController,private renderer: Renderer2) {}
 
   ngAfterViewInit() {
     this.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
-
     this.destinationMarker.src = 'assets/images/map-destination-marker.png';
-
     this.originMarker.src = 'assets/images/map-origin-marker.png';
-
   }
 
-  private drawOriginMarker(event){
-    switch (event.target.id){
+  private sendParkingId(event){
+    this.parking = event.target.id;
+    this.drawOriginMarker(this.parking);
+  }
+
+  private drawOriginMarker(parkingId : String){
+    switch (parkingId){
       case 'parkingA':
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         this.context.drawImage(this.originMarker, 315,260);
         break;
+      case 'parkingB':
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        //this is yours
+        break;
+      case 'parkingC':
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        //this is yours
+        break;
+      case 'parkingD':
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 160,243);
+        break;
+      case 'parkingF':
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        //this is mine
+        break;
+      default:
+        break;
     }
   }
 
-  private drawPath(btnId : string) {
+  private drawPathFromParkingA(btnId : string) {
     this.context.beginPath();
     this.context.lineWidth = 5;
     this.context.strokeStyle = "lime";
@@ -77,6 +96,42 @@ export class HomePage {
         break;
     }
     this.context.stroke();
+  }
+
+  private drawPathFromParkingB(btnId : string) {
+    //this is yours
+  }
+
+  private drawPathFromParkingC(btnId : string) {
+    //this is yours
+  }
+
+  private drawPathFromParkingD(btnId : string) {
+    //im working on this
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId){
+      case 'buildingC':
+        this.context.moveTo(176,244);
+        this.context.lineTo(176, 240);
+        this.context.lineTo(200, 240);
+        this.drawDestinationMarker(btnId);
+        break;
+      case 'buildingD':
+        this.drawDestinationMarker(btnId);
+        break;
+      case 'buildingE':
+        this.drawDestinationMarker(btnId);
+        break;
+      default:
+        break;
+    }
+    this.context.stroke();
+  }
+
+  private drawPathFromParkingF(btnId : string) {
+    //this is my part
   }
 
   private drawDestinationMarker(btnId : String){
@@ -132,7 +187,25 @@ export class HomePage {
         if (col.options[col.selectedIndex].value == 'null') {
           this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         }
-        this.drawPath(col.options[col.selectedIndex].value);
+        switch (this.parking){
+          case 'parkingA':
+            this.drawPathFromParkingA(col.options[col.selectedIndex].value);
+            break;
+          case 'parkingB':
+            this.drawPathFromParkingB(col.options[col.selectedIndex].value);
+            break;
+          case 'parkingC':
+            this.drawPathFromParkingC(col.options[col.selectedIndex].value);
+            break;
+          case 'parkingD':
+            this.drawPathFromParkingD(col.options[col.selectedIndex].value);
+            break;
+          case 'parkingF':
+            this.drawPathFromParkingF(col.options[col.selectedIndex].value);
+            break;
+          default:
+            break;
+        }
       }else{
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
       }
