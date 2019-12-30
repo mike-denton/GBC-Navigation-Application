@@ -107,7 +107,6 @@ export class HomePage {
   }
 
   private drawPathFromParkingD(btnId : string) {
-    //im working on this
     this.context.beginPath();
     this.context.lineWidth = 5;
     this.context.strokeStyle = "lime";
@@ -115,13 +114,28 @@ export class HomePage {
       case 'buildingC':
         this.context.moveTo(176,244);
         this.context.lineTo(176, 240);
-        this.context.lineTo(200, 240);
+        this.context.lineTo(205, 240);
+        this.context.lineTo(224, 230);
+        this.context.lineTo(280, 230);
+        this.context.lineTo(280, 139);
+        this.context.lineTo(230, 139);
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingD':
+        this.context.moveTo(176,244);
+        this.context.lineTo(176, 240);
+        this.context.lineTo(153, 240);
+        this.context.lineTo(153, 210);
+        this.context.lineTo(190, 210);
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingE':
+        this.context.moveTo(176,244);
+        this.context.lineTo(176, 240);
+        this.context.lineTo(205, 240);
+        this.context.lineTo(224, 230);
+        this.context.lineTo(243, 230);
+        this.context.lineTo(243, 197);
         this.drawDestinationMarker(btnId);
         break;
       default:
