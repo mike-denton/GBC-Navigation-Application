@@ -47,7 +47,7 @@ export class HomePage {
         break;
       case 'parkingC':
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
-        //this.context.drawImage(this.originMarker,)
+        this.context.drawImage(this.originMarker, 121,138);
         //this is yours
         break;
       case 'parkingD':
@@ -129,8 +129,8 @@ export class HomePage {
         this.context.lineTo(283, 230);
 
         //curve
-        this.context.moveTo(208, 240);
-        this.context.lineTo(276, 229);
+        this.context.moveTo(214, 240);
+        this.context.lineTo(283, 199);
 
         // this.context.moveTo(303, 250);
         // this.context.lineTo(212, 251);
@@ -144,16 +144,53 @@ export class HomePage {
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingE':
-          this.drawDestinationMarker(btnId);
-          break;
+        this.context.moveTo(278, 164);
+        this.context.lineTo(310, 164);
+        
+        this.context.moveTo(281, 165);
+        this.context.lineTo(281, 205);
+
+        this.context.moveTo(238, 202);
+        this.context.lineTo(279, 202);
+        this.drawDestinationMarker(btnId);
+        break;
       default:
         break;
     }
     this.context.stroke();
   }
 
+  //this is yours
   private drawPathFromParkingC(btnId : string) {
-    //this is yours
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId){
+      case 'buildingC':                
+        this.context.moveTo(231, 150);
+        this.context.lineTo(146, 150);
+        this.drawDestinationMarker(btnId);
+        break;
+      case 'buildingD':
+        this.context.moveTo(155,165);        
+        this.context.lineTo(135, 170);
+
+        this.context.moveTo(189,210);
+        this.context.lineTo(153, 210);
+
+        this.context.lineTo(153, 163);
+        this.drawDestinationMarker(btnId);
+        break;
+      case 'buildingE':
+
+        // this.context.lineTo(153, 240);
+        // this.context.lineTo(153, 210);
+        this.drawDestinationMarker(btnId);
+        break;
+      default:
+        break;
+    }
+    this.context.stroke();
   }
 
   private drawPathFromParkingD(btnId : string) {
