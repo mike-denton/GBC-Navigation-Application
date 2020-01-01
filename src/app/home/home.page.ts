@@ -118,28 +118,21 @@ export class HomePage {
 
         this.drawDestinationMarker(btnId);
         break;
-      case 'buildingD':
+      case 'buildingD':        
+      // finish this
         this.context.moveTo(278, 164);
         this.context.lineTo(310, 164);
         
         this.context.moveTo(281, 165);
         this.context.lineTo(281, 230);
 
-        this.context.moveTo(223, 230);
+        this.context.moveTo(190,209);
+        this.context.lineTo(190, 240);
+
+        this.context.lineTo(205, 240);
+        this.context.lineTo(224, 230);
+
         this.context.lineTo(283, 230);
-
-        //curve
-        this.context.moveTo(214, 240);
-        this.context.lineTo(283, 199);
-
-        // this.context.moveTo(303, 250);
-        // this.context.lineTo(212, 251);
-
-        // this.context.moveTo(212, 251);
-        // this.context.lineTo(212, 188);
-
-        // this.context.moveTo(212, 187);
-        // this.context.lineTo(252, 187);
         
         this.drawDestinationMarker(btnId);
         break;
@@ -160,7 +153,7 @@ export class HomePage {
     this.context.stroke();
   }
 
-  //this is yours
+  //this is yours DONE
   private drawPathFromParkingC(btnId : string) {
     this.context.beginPath();
     this.context.lineWidth = 5;
@@ -172,8 +165,8 @@ export class HomePage {
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingD':
-        this.context.moveTo(155,165);        
-        this.context.lineTo(135, 170);
+        this.context.moveTo(155,164);        
+        this.context.lineTo(135, 164);
 
         this.context.moveTo(189,210);
         this.context.lineTo(153, 210);
@@ -182,9 +175,16 @@ export class HomePage {
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingE':
+        this.context.moveTo(140,160);   
+        this.context.lineTo(155,160); 
 
-        // this.context.lineTo(153, 240);
-        // this.context.lineTo(153, 210);
+        this.context.lineTo(155, 240);
+        this.context.lineTo(205, 240);
+
+        this.context.lineTo(224, 230);
+        this.context.lineTo(243, 230);
+
+        this.context.lineTo(243, 197);
         this.drawDestinationMarker(btnId);
         break;
       default:
