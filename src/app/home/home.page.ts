@@ -48,7 +48,6 @@ export class HomePage {
       case 'parkingC':
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         this.context.drawImage(this.originMarker, 121,138);
-        //this is yours
         break;
       case 'parkingD':
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
@@ -56,7 +55,7 @@ export class HomePage {
         break;
       case 'parkingF':
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
-        //this is mine
+        this.context.drawImage(this.originMarker,295,173);
         break;
       default:
         break;
@@ -100,7 +99,6 @@ export class HomePage {
     this.context.stroke();
   }
 
-  //this is yours
   private drawPathFromParkingB(btnId : string) {
     this.context.beginPath();
     this.context.lineWidth = 5;
@@ -119,7 +117,6 @@ export class HomePage {
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingD':        
-      // finish this
         this.context.moveTo(278, 164);
         this.context.lineTo(310, 164);
         
@@ -153,7 +150,6 @@ export class HomePage {
     this.context.stroke();
   }
 
-  //this is yours DONE
   private drawPathFromParkingC(btnId : string) {
     this.context.beginPath();
     this.context.lineWidth = 5;
@@ -165,8 +161,8 @@ export class HomePage {
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingD':
-        this.context.moveTo(155,164);        
-        this.context.lineTo(135, 164);
+        this.context.moveTo(153,164);        
+        this.context.lineTo(140, 164);
 
         this.context.moveTo(189,210);
         this.context.lineTo(153, 210);
@@ -232,7 +228,49 @@ export class HomePage {
   }
 
   private drawPathFromParkingF(btnId : string) {
-    //this is my part
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId){
+      case 'buildingC':                
+        this.context.moveTo(281, 138);
+        this.context.lineTo(281, 200);
+        
+        this.context.moveTo(280, 200);
+        this.context.lineTo(310, 200);
+        
+        this.context.moveTo(280, 139);
+        this.context.lineTo(228, 139);
+        this.drawDestinationMarker(btnId);
+        break;
+      case 'buildingD':
+        this.context.moveTo(281, 230);
+        this.context.lineTo(281, 200);
+
+        this.context.moveTo(280, 200);
+        this.context.lineTo(310, 200);
+
+        this.context.moveTo(190,209);
+        this.context.lineTo(190, 240);
+
+        this.context.lineTo(205, 240);
+        this.context.lineTo(224, 230);
+
+        this.context.lineTo(283, 230);
+
+        this.drawDestinationMarker(btnId);
+        break;
+      case 'buildingE':
+
+        this.context.moveTo(240, 202);
+        this.context.lineTo(310, 202);
+
+        this.drawDestinationMarker(btnId);
+        break;
+      default:
+        break;
+    }
+    this.context.stroke();
   }
 
   private drawDestinationMarker(btnId : String){
