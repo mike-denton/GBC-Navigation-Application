@@ -4,7 +4,7 @@
 - npm install -g @angular/cli
 - npm install -g ionic
 - npm install -g native-run
-- pm install -g cordova
+- npm install -g cordova
 
 — TO BUILD AND RUN THE APP —
 
