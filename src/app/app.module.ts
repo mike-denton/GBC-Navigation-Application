@@ -17,13 +17,13 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDoCXfX9JLUS0yePIM3vKXHah2uNKYDJ0o",
+  apiKey: "M8tZy9BsVk7Gfjw3xDBOYEuU/GaaWbfo+czUpihGB5JIM25SOMSAo+nXuRzyZC60", 
   authDomain: "gbc-navigation-app.firebaseapp.com",
   databaseURL: "https://gbc-navigation-app.firebaseio.com",
   projectId: "gbc-navigation-app",
   storageBucket: "gbc-navigation-app.appspot.com",
-  messagingSenderId: "1038586060193",
-  appId: "1:1038586060193:web:cd65a4ca8a7a910ec2ffe0"
+  messagingSenderId: "CUZ5H5abYJcmCxt5Uvblzg==",  
+  appId: "CEsNWGq9qLOcOy0OchMOJUP/A2QE0WU8NvoQpqPxmL65hGjio3OtFsiOFBDvHpyx" 
   //messengerId for google analytics
 };
 
