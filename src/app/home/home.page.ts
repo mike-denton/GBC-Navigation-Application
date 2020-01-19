@@ -2,6 +2,8 @@ import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 import { DrawPathService} from '../draw-path.service'
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +21,42 @@ export class HomePage {
 
   public dps = new DrawPathService();
 
-  constructor(private pickerCtrl: PickerController,private renderer: Renderer2, private drawPathService: DrawPathService) {}
+  private deviceInfo = null;
+
+  constructor(
+    private pickerCtrl: PickerController,
+    private renderer: Renderer2, 
+    private drawPathService: DrawPathService,
+    private deviceService: DeviceDetectorService,
+    private geolocation: Geolocation
+    ) 
+  {
+    this.deviceInfo = this.deviceService;  
+    console.log(this.data);
+    console.log(this.geoLoc());
+  }
+
+  // tracking application startup, datetime, device type etc.
+  public data = {
+    datetime: `Date: ${new Date().toDateString()}, Time: ${new Date().toTimeString()}`,
+    device: this.deviceService.getDeviceInfo(),
+    //location: this.geolocation.getCurrentPosition().then((resp) => { console.log(`Coordinates: latitude: ${resp.coords.latitude}, longitude: ${resp.coords.longitude}`)}).catch((error) => {console.log('Error getting location', error);})
+  }   
+
+  geoLoc() {
+    this.geolocation.getCurrentPosition().then((resp) => {
+        console.log(`Current Position => latitude: ${resp.coords.latitude}, longitude: ${resp.coords.longitude}`)
+
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
+
+     let watch = this.geolocation.watchPosition();
+      watch.subscribe((data) => {
+      // data can be a set of coordinates, or an error (if an error occurred).
+        console.log(`Updated Position... => latitude: ${data.coords.latitude}, longitude: ${data.coords.longitude}`)
+      });
+  }
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
