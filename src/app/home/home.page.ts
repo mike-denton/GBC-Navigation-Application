@@ -2,6 +2,8 @@ import { Component, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 import { DrawPathService} from '../draw-path.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -15,19 +17,30 @@ export class HomePage {
 
   private width: 578;
   private height: 438;
+
   private parking;
+  private building;
 
   public dps = new DrawPathService();
 
-  constructor(private pickerCtrl: PickerController,private renderer: Renderer2, private drawPathService: DrawPathService) {}
+  constructor(private pickerCtrl: PickerController,
+    private renderer: Renderer2, 
+    private drawPathService: DrawPathService,
+    private router: Router) {}
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
   }
 
   private sendParkingId(event){
+    this.buildingsPicker();
     this.parking = event.target.id;
     this.dps.drawOriginMarker(this.parking);
+  }
+
+  private sendBuildingId(event){
+    this.floorsPicker();
+    this.building = event.target.id;
   }
  
   async buildingsPicker(){
@@ -91,6 +104,55 @@ export class HomePage {
         }
       }else{
         this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
+      }
+    });
+  }
+
+
+  async floorsPicker(){
+    let pickerAction;
+    let floors: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Done',
+          role: 'done',
+          handler: value => {
+            pickerAction = 'done';
+          }
+        }
+      ],
+      columns: [
+        {
+          name: 'floors',
+          options: [
+            { text: '--- Please Select ---', value: 'null'},
+            { text: 'Basement', value:'basement'},
+            { text: '1st Floor', value: 'floor1' },
+            { text: '2nd Floor', value: 'floor2' },
+            { text: '3rd Floor', value: 'floor3' },
+            { text: '4th Floor', value: 'floor4' }
+          ]
+        }
+      ]
+    };
+
+    let picker = await this.pickerCtrl.create(floors);
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('floors');
+      if (pickerAction == 'done') {
+        switch (col.options[col.selectedIndex].value){
+          case 'floor3':
+            this.router.navigate(['/e-building-floor3'])
+            break;
+          default:
+            break;
+        }
+      }else{
       }
     });
   }
