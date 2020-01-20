@@ -8,6 +8,7 @@
 
 <ion-content>
   <div class="ion-padding">
+    <div>{{geoLoc}}</div>
     <div id="container">
       <img #image class='img' draggable="false" src="assets/images/campusmap.png" alt="exterior campus map" usemap="#image-map" />
           <map name="image-map" (click)="buildingsPicker()">
