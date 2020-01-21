@@ -23,6 +23,9 @@ export class HomePage {
 
   private deviceInfo = null;
 
+  lat = 0; 
+  lon = 0;
+
   constructor(
     private pickerCtrl: PickerController,
     private renderer: Renderer2, 
@@ -45,7 +48,9 @@ export class HomePage {
 
   geoLoc() {
     this.geolocation.getCurrentPosition().then((resp) => {
-        console.log(`Current Position => latitude: ${resp.coords.latitude}, longitude: ${resp.coords.longitude}`)
+      this.lat = resp.coords.latitude;
+      this.lon = resp.coords.longitude;
+      console.log(`Current Position => latitude: ${resp.coords.latitude}, longitude: ${resp.coords.longitude}`)
 
      }).catch((error) => {
        console.log('Error getting location', error);
