@@ -26,6 +26,30 @@ export class DrawPathService {
     this.originMarker.src = 'assets/images/map-origin-marker.png';
   } 
 
+  public draw(){
+    this.originMarker.onload = () => {
+      this.context.drawImage(this.originMarker, 315,260);
+      this.context.drawImage(this.originMarker,295,132);
+      this.context.drawImage(this.originMarker, 121,138);
+      this.context.drawImage(this.originMarker, 160,243);
+      this.context.drawImage(this.originMarker,295,173);
+    };
+  }
+
+  public start() {
+    this.draw();
+
+  //   setInterval(() => {
+  //     console.log("start")
+  //     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);￼
+  //     // this.start();
+  //     // this.draw()
+  //     console.log("end")
+  // }, 1000);
+
+}
+
+
   public drawOriginMarker(parkingId : String){
 
     switch (parkingId){

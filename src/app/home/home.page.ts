@@ -30,6 +30,7 @@ export class HomePage {
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
+    this.dps.start();
   }
 
   private sendParkingId(event){
