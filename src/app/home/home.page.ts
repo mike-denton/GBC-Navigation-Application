@@ -4,12 +4,17 @@ import { PickerOptions } from '@ionic/core';
 import { DrawPathService} from '../draw-path.service'
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Network } from '@ionic-native/network/ngx';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
+//rn two possiblities for popup check it out (you can erase this, just for notes)
+// https://ionicframework.com/docs/native/location-accuracy
+// https://github.com/dpa99c/cordova-diagnostic-plugin
 
 export class HomePage {
   
@@ -31,12 +36,14 @@ export class HomePage {
     private renderer: Renderer2, 
     private drawPathService: DrawPathService,
     private deviceService: DeviceDetectorService,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private network: Network,
     ) 
   {
     this.deviceInfo = this.deviceService;  
     console.log(this.data);
     console.log(this.geoLoc());
+    console.log(this.checkConnection());
   }
 
   // tracking application startup, datetime, device type etc.
@@ -50,7 +57,7 @@ export class HomePage {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.lon = resp.coords.longitude;
-      console.log(`Current Position => latitude: ${resp.coords.latitude}, longitude: ${resp.coords.longitude}`)
+      console.log(`Current Position => latitude: ${this.lat}, longitude: ${this.lon}`)
 
      }).catch((error) => {
        console.log('Error getting location', error);
@@ -61,6 +68,17 @@ export class HomePage {
       // data can be a set of coordinates, or an error (if an error occurred).
         console.log(`Updated Position... => latitude: ${data.coords.latitude}, longitude: ${data.coords.longitude}`)
       });
+  }
+
+  checkConnection() {
+    let conn = navigator.connection.type;
+
+    if(conn == 'wifi'){
+      alert(`connected to ${conn}`);
+    }else{
+      alert(`connection type: ${conn}`);
+    }
+
   }
 
   ngAfterViewInit() {

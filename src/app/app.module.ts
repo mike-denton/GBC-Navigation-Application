@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { DeviceDetectorModule } from 'ngx-device-detector';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Network } from '@ionic-native/network/ngx';
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -39,6 +40,7 @@ const firebaseConfig = {
     AngularFireAuthModule,
     DeviceDetectorModule,
     Geolocation,
+    Network,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
