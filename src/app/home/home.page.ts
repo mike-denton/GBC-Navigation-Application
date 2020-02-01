@@ -71,7 +71,7 @@ export class HomePage {
   }
 
   checkConnection() {
-    let conn = navigator.connection.type;
+    let conn = navigator['connection'].type;
 
     if(conn == 'wifi'){
       alert(`connected to ${conn}`);
