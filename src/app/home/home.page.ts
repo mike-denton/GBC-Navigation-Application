@@ -30,7 +30,7 @@ export class HomePage {
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
-    this.dps.start();
+    this.dps.draw();
   }
 
   private sendParkingId(event){
@@ -80,6 +80,7 @@ export class HomePage {
       if (pickerAction == 'done') {
         if (col.options[col.selectedIndex].value == 'null') {
           this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
+          this.dps.draw();
         }
         switch (this.parking){
           case 'parkingA':
@@ -87,15 +88,12 @@ export class HomePage {
             break;
           case 'parkingB':
             this.dps.drawPathFromParkingB(col.options[col.selectedIndex].value);
-
             break;
           case 'parkingC':
             this.dps.drawPathFromParkingC(col.options[col.selectedIndex].value);
-
             break;
           case 'parkingD':
             this.dps.drawPathFromParkingD(col.options[col.selectedIndex].value);
-
             break;
           case 'parkingF':
             this.dps.drawPathFromParkingF(col.options[col.selectedIndex].value);

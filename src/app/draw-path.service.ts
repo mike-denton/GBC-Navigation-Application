@@ -36,20 +36,6 @@ export class DrawPathService {
     };
   }
 
-  public start() {
-    this.draw();
-
-  //   setInterval(() => {
-  //     console.log("start")
-  //     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);￼
-  //     // this.start();
-  //     // this.draw()
-  //     console.log("end")
-  // }, 1000);
-
-}
-
-
   public drawOriginMarker(parkingId : String){
 
     switch (parkingId){
