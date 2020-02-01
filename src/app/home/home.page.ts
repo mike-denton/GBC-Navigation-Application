@@ -3,6 +3,9 @@ import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 import { DrawPathService} from '../draw-path.service'
 import { Router } from '@angular/router';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Network } from '@ionic-native/network/ngx';
 
 
 @Component({
@@ -21,12 +24,65 @@ export class HomePage {
   private parking;
   private building;
 
+  public lat = 0
+  public lon = 0
+
   public dps = new DrawPathService();
 
-  constructor(private pickerCtrl: PickerController,
+  private deviceInfo = null
+
+  constructor(
+    private pickerCtrl: PickerController,
     private renderer: Renderer2, 
     private drawPathService: DrawPathService,
-    private router: Router) {}
+    private deviceService: DeviceDetectorService,
+    private geolocation: Geolocation,
+    private network: Network,
+    private router: Router
+  ) 
+  {
+    this.deviceInfo = this.deviceService;  
+    console.log(this.data);
+    console.log(this.geoLoc());
+    console.log(this.checkConnection());
+  }
+
+  // tracking application startup, datetime, device type etc.
+  public data = {
+    datetime: `Date: ${new Date().toDateString()}, Time: ${new Date().toTimeString()}`,
+    device: this.deviceService.getDeviceInfo(),
+    //location: this.geolocation.getCurrentPosition().then((resp) => { console.log(`Coordinates: latitude: ${resp.coords.latitude}, longitude: ${resp.coords.longitude}`)}).catch((error) => {console.log('Error getting location', error);})
+  }   
+
+  geoLoc() {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.lat = resp.coords.latitude;
+      this.lon = resp.coords.longitude;
+      console.log(`Current Position => latitude: ${this.lat}, longitude: ${this.lon}`)
+
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
+
+     let watch = this.geolocation.watchPosition();
+      watch.subscribe((data) => {
+      this.lat = data.coords.latitude;
+      this.lon = data.coords.longitude;
+      // data can be a set of coordinates, or an error (if an error occurred).
+        console.log(`Updated Position... => latitude: ${this.lat}, longitude: ${this.lon}`)
+      });
+  }
+
+  checkConnection() {
+    let conn = navigator['connection'].type;
+
+    if(conn == 'wifi'){
+      alert(`connected to ${conn}`);
+    }else{
+      alert(`connection type: ${conn}`);
+    }
+
+  }
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
