@@ -1,13 +1,8 @@
-
-ion-content{
-    --ion-background-color:#666666;
-    --overflow: hidden;
-}
-
-#container {
+.img {
+    position: absolute;
+    z-index: 1;
     max-width: 100%;
     height: auto;
-    position: absolute;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
@@ -15,15 +10,4 @@ ion-content{
 	-ms-transform: translate(-50%, -50%);
 	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-}
-
-.img {
-    position: absolute;
-    z-index: 1;
-}
-
-#mapCanvas {
-    position: relative;
-    z-index: 1;
-    pointer-events: none
 }

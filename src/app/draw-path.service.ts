@@ -8,25 +8,17 @@ import { PickerOptions } from '@ionic/core';
 export class DrawPathService {
 
   public context: CanvasRenderingContext2D;
-
-  private width: 578;
-  private height: 438;
-
-  private parking;
-
   private destinationMarker = new Image();
   private originMarker = new Image();
-
-  private event;
-
-  private pickerCtrl: PickerController;
 
   constructor() {    
     this.destinationMarker.src = 'assets/images/map-destination-marker.png';
     this.originMarker.src = 'assets/images/map-origin-marker.png';
-  } 
-
-  public draw(){
+  }
+  
+  // Parking Markers Main Page
+  // * MAIN PAGE START * 
+  public drawParkingMarkers(){
     this.originMarker.onload = () => {
       this.context.drawImage(this.originMarker, 315,260);
       this.context.drawImage(this.originMarker,295,132);
@@ -37,7 +29,6 @@ export class DrawPathService {
   }
 
   public drawOriginMarker(parkingId : String){
-
     switch (parkingId){
       case 'parkingA':
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
@@ -109,39 +100,29 @@ export class DrawPathService {
       case 'buildingC':
         this.context.moveTo(281, 135);
         this.context.lineTo(281, 165);
-        
         this.context.moveTo(278, 164);
         this.context.lineTo(310, 164);
-        
         this.context.moveTo(280, 139);
         this.context.lineTo(228, 139);
-
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingD':        
         this.context.moveTo(278, 164);
         this.context.lineTo(310, 164);
-        
         this.context.moveTo(281, 165);
         this.context.lineTo(281, 230);
-
         this.context.moveTo(190,209);
         this.context.lineTo(190, 240);
-
         this.context.lineTo(205, 240);
         this.context.lineTo(224, 230);
-
-        this.context.lineTo(283, 230);
-        
+        this.context.lineTo(283, 230);       
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingE':
         this.context.moveTo(278, 164);
-        this.context.lineTo(310, 164);
-        
+        this.context.lineTo(310, 164);        
         this.context.moveTo(281, 165);
         this.context.lineTo(281, 205);
-
         this.context.moveTo(238, 202);
         this.context.lineTo(279, 202);
         this.drawDestinationMarker(btnId);
@@ -165,23 +146,18 @@ export class DrawPathService {
       case 'buildingD':
         this.context.moveTo(153,164);        
         this.context.lineTo(140, 164);
-
         this.context.moveTo(189,210);
         this.context.lineTo(153, 210);
-
         this.context.lineTo(153, 163);
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingE':
         this.context.moveTo(140,160);   
         this.context.lineTo(155,160); 
-
         this.context.lineTo(155, 240);
         this.context.lineTo(205, 240);
-
         this.context.lineTo(224, 230);
         this.context.lineTo(243, 230);
-
         this.context.lineTo(243, 197);
         this.drawDestinationMarker(btnId);
         break;
@@ -236,11 +212,9 @@ export class DrawPathService {
     switch (btnId){
       case 'buildingC':                
         this.context.moveTo(281, 138);
-        this.context.lineTo(281, 200);
-        
+        this.context.lineTo(281, 200);       
         this.context.moveTo(280, 200);
-        this.context.lineTo(310, 200);
-        
+        this.context.lineTo(310, 200);        
         this.context.moveTo(280, 139);
         this.context.lineTo(228, 139);
         this.drawDestinationMarker(btnId);
@@ -248,25 +222,18 @@ export class DrawPathService {
       case 'buildingD':
         this.context.moveTo(281, 230);
         this.context.lineTo(281, 200);
-
         this.context.moveTo(280, 200);
         this.context.lineTo(310, 200);
-
         this.context.moveTo(190,209);
         this.context.lineTo(190, 240);
-
         this.context.lineTo(205, 240);
         this.context.lineTo(224, 230);
-
         this.context.lineTo(283, 230);
-
         this.drawDestinationMarker(btnId);
         break;
       case 'buildingE':
-
         this.context.moveTo(240, 202);
         this.context.lineTo(310, 202);
-
         this.drawDestinationMarker(btnId);
         break;
       default:
@@ -289,5 +256,13 @@ export class DrawPathService {
       default:
         break;
     }
-  } 
+  }
+  
+  // * MAIN PAGE END * 
+
+  public drawEbuildingFloor2_OriginMarkers(){
+    this.originMarker.onload = () => {
+      this.context.drawImage(this.originMarker, 95,295);
+    };
+  }
 }

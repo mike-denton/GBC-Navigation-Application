@@ -15,9 +15,6 @@ export class HomePage {
   
   @ViewChild('canvasEl', {static: true}) canvasEl: ElementRef;  
 
-  private width: 578;
-  private height: 438;
-
   private parking;
   private building;
 
@@ -30,7 +27,7 @@ export class HomePage {
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
-    this.dps.draw();
+    this.dps.drawParkingMarkers();
   }
 
   private sendParkingId(event){
@@ -80,7 +77,6 @@ export class HomePage {
       if (pickerAction == 'done') {
         if (col.options[col.selectedIndex].value == 'null') {
           this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
-          this.dps.draw();
         }
         switch (this.parking){
           case 'parkingA':
@@ -145,6 +141,9 @@ export class HomePage {
       let col = await picker.getColumn('floors');
       if (pickerAction == 'done') {
         switch (col.options[col.selectedIndex].value){
+          case 'floor2':
+            this.router.navigate(['/e-building-floor2'])
+            break;
           case 'floor3':
             this.router.navigate(['/e-building-floor3'])
             break;

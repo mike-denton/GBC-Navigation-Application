@@ -3,9 +3,12 @@ ion-content{
     --overflow: hidden;
 }
 
+.img {
+    position: absolute;
+    z-index: 1;
+}
+
 #container {
-    width: 578px;
-    height: 438px;
     position: absolute;
 	top: 50%;
 	left: 50%;
@@ -16,13 +19,8 @@ ion-content{
 	transform: translate(-50%, -50%);
 }
 
-.img {
-    position: absolute;
-    z-index: 1;
-}
-
 #mapCanvas {
     position: relative;
     z-index: 1;
-    pointer-events: none
+    pointer-events: none;
 }
