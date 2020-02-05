@@ -5,13 +5,32 @@
 </ion-header>
 
 <ion-content>
+  <style>
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
   <div class="ion-padding">
     <div id="container">
-      <img #image class='img' draggable="false" src="assets/images/eBuildingFloor2.png" alt="E Building Second Floor" usemap="#eBuildingFloor2-map" />
+      <img
+        #image
+        class="img"
+        draggable="false"
+        src="assets/images/eBuildingFloor2.png"
+        alt="E Building Second Floor"
+        usemap="#eBuildingFloor2-map"
+      />
       <map name="eBuildingFloor2-map">
-        <area alt="stairCase" id="stairCase" title="stairCase" coords="185,511,185,543,202,543,202,511" shape="poly">
+        <area
+          alt="stairCase"
+          id="stairCase"
+          title="stairCase"
+          coords="185,511,185,543,202,543,202,511"
+          shape="poly"
+        />
       </map>
-      <canvas id="mapCanvas" #canvasEl width=839 height=651></canvas>
+      <canvas id="mapCanvas" #canvasEl width="100%" height="100%"></canvas>
     </div>
   </div>
 </ion-content>
