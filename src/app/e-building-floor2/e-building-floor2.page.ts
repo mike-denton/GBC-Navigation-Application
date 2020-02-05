@@ -23,17 +23,10 @@ export class EBuildingFloor2Page implements OnInit {
     private pickerCtrl: PickerController,
     private renderer: Renderer2,
     private drawPathService: DrawPathService,
-    platform: Platform
-  ) {
-    platform.ready().then(readySource => {
-      console.log("Width: " + platform.width());
-      console.log("Height: " + platform.height());
-    });
-  }
+  ) {}
 
   ngOnInit() {
-    this.dps.context = (this.canvasEl
-      .nativeElement as HTMLCanvasElement).getContext("2d");
-    this.dps.drawEbuildingFloor2_OriginMarkers();
+    this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext("2d");
+    this.dps.drawEbuildingFloor2_OriginMarkers();  
   }
 }
