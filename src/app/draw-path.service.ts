@@ -10,8 +10,6 @@ export class DrawPathService {
   private destinationMarker = new Image();
   private originMarker = new Image();
 
-
-
   constructor() {
     this.destinationMarker.src = "assets/images/map-destination-marker.png";
     this.originMarker.src = "assets/images/map-origin-marker.png";
@@ -32,23 +30,48 @@ export class DrawPathService {
   public drawOriginMarker(parkingId: String) {
     switch (parkingId) {
       case "parkingA":
-        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.clearRect(
+          0,
+          0,
+          this.context.canvas.width,
+          this.context.canvas.height
+        );
         this.context.drawImage(this.originMarker, 315, 260);
         break;
       case "parkingB":
-        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.clearRect(
+          0,
+          0,
+          this.context.canvas.width,
+          this.context.canvas.height
+        );
         this.context.drawImage(this.originMarker, 295, 132);
         break;
       case "parkingC":
-        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.clearRect(
+          0,
+          0,
+          this.context.canvas.width,
+          this.context.canvas.height
+        );
         this.context.drawImage(this.originMarker, 121, 138);
         break;
       case "parkingD":
-        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.clearRect(
+          0,
+          0,
+          this.context.canvas.width,
+          this.context.canvas.height
+        );
         this.context.drawImage(this.originMarker, 160, 243);
         break;
       case "parkingF":
-        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.clearRect(
+          0,
+          0,
+          this.context.canvas.width,
+          this.context.canvas.height
+        );
         this.context.drawImage(this.originMarker, 295, 173);
         break;
       default:
@@ -264,7 +287,12 @@ export class DrawPathService {
   public drawEbuildingFloor2_OriginMarker(stairCaseId: string) {
     switch (stairCaseId) {
       case "stairCaseE":
-        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.clearRect(
+          0,
+          0,
+          this.context.canvas.width,
+          this.context.canvas.height
+        );
         this.context.drawImage(this.originMarker, 183, 495);
         break;
       default:
@@ -278,6 +306,8 @@ export class DrawPathService {
     this.context.strokeStyle = "lime";
     switch (btnId) {
       case "e227":
+      
+
         this.context.moveTo(200, 495);
         this.context.lineTo(200, 487);
         this.context.lineTo(430, 487);
