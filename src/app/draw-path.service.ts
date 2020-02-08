@@ -261,9 +261,45 @@ export class DrawPathService {
 
   // * MAIN PAGE END *
 
-  public drawEbuildingFloor2_OriginMarkers() {
-    this.originMarker.onload = () => {
-      this.context.drawImage(this.originMarker, 183, 495);
-    };
+  public drawEbuildingFloor2_OriginMarker(stairCaseId: string) {
+    switch (stairCaseId) {
+      case "stairCaseE":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 183, 495);
+        break;
+      default:
+        break;
+    }
+  }
+
+  public drawPathFromStairCaseE(btnId: string) {
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId) {
+      case "e227":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(430, 487);
+        this.context.lineTo(430, 518);
+        this.context.moveTo(430, 487);
+        this.context.lineTo(540, 487);
+        this.context.lineTo(540, 518);
+        this.drawDestinationRoomMarker(btnId);
+        break;
+      default:
+        break;
+    }
+    this.context.stroke();
+  }
+
+  public drawDestinationRoomMarker(btnId: String) {
+    switch (btnId) {
+      case "e227":
+        this.context.drawImage(this.destinationMarker, 470, 500);
+        break;
+      default:
+        break;
+    }
   }
 }
