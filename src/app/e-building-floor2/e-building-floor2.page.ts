@@ -74,7 +74,6 @@ export class EBuildingFloor2Page implements OnInit {
           options: [
             { text: "--- Please Select ---", value: "null" },
             { text: "E201", value: "e201" },
-            { text: "E203", value: "e203" },
             { text: "E208", value: "e208" },
             { text: "E212", value: "e212" },
             { text: "E213", value: "e213" },
@@ -89,7 +88,8 @@ export class EBuildingFloor2Page implements OnInit {
             { text: "E228", value: "e228" },
             { text: "E244", value: "e244" },
             { text: "E245", value: "e245" },
-            { text: "E250", value: "e250" }
+            { text: "E250", value: "e250" },
+            { text: "Washroom", value: "wr" },
           ]
         }
       ]
@@ -98,35 +98,23 @@ export class EBuildingFloor2Page implements OnInit {
     let picker = await this.pickerCtrl.create(stairsRooms);
     picker.present();
     picker.onDidDismiss().then(async data => {
-      //let stairCases = await picker.getColumn('stairCases');
       let rooms = await picker.getColumn("rooms");
       if (pickerAction == "done") {
-        // if (stairCases.options[stairCases.selectedIndex].value == 'null' || rooms.options[rooms.selectedIndex].value == 'null') {
         if (rooms.options[rooms.selectedIndex].value == "null") {
-          this.dps.context.clearRect(
-            0,
-            0,
-            this.dps.context.canvas.width,
-            this.dps.context.canvas.height
-          );
+          this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
         }
         switch (this.stairCase) {
+          case "entrance":
+            this.dps.drawPathFromEntranceE(rooms.options[rooms.selectedIndex].value);
+            break;
           case "stairCaseE":
-            this.dps.drawPathFromStairCaseE("e227");
-            // this.dps.drawPathFromStairCaseE(
-            //   rooms.options[rooms.selectedIndex].value
-            // );
+            this.dps.drawPathFromStairCaseE(rooms.options[rooms.selectedIndex].value);
             break;
           default:
             break;
         }
       } else {
-        this.dps.context.clearRect(
-          0,
-          0,
-          this.dps.context.canvas.width,
-          this.dps.context.canvas.height
-        );
+        this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
       }
     });
   }
@@ -147,7 +135,7 @@ export class EBuildingFloor2Page implements OnInit {
           areas = map.getElementsByTagName("area"),
           len = areas.length,
           coords = [],
-          previousWidth = 839; // image original width
+          previousWidth = window.innerWidth; // image original width
         for (n = 0; n < len; n++) {
           coords[n] = areas[n].coords.split(",");
         }

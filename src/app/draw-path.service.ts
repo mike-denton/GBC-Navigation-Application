@@ -286,18 +286,72 @@ export class DrawPathService {
 
   public drawEbuildingFloor2_OriginMarker(stairCaseId: string) {
     switch (stairCaseId) {
+      case "entrance":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 655,205);
+        break;
       case "stairCaseE":
-        this.context.clearRect(
-          0,
-          0,
-          this.context.canvas.width,
-          this.context.canvas.height
-        );
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         this.context.drawImage(this.originMarker, 183, 495);
         break;
       default:
         break;
     }
+  }
+
+  public drawPathFromEntranceE(btnId: string) {
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId) {
+      case "e212":
+        this.context.moveTo(648, 213);
+        this.context.lineTo(608, 141);
+        this.context.lineTo(519, 141);
+        this.context.lineTo(519, 168);
+        this.context.moveTo(521, 168);
+        this.context.lineTo(165, 168);
+        this.context.moveTo(165, 170);
+        this.context.lineTo(165, 152);
+        this.drawDestinationRoomMarker(btnId);
+        break;
+      case "e218":
+        this.context.moveTo(648, 213);
+        this.context.lineTo(608, 141);
+        this.context.lineTo(519, 141);
+        this.context.lineTo(519, 183);
+        this.context.moveTo(521, 183);
+        this.context.lineTo(387, 183);
+        this.context.lineTo(387, 202);
+        this.context.moveTo(387, 183);
+        this.context.lineTo(281, 183);
+        this.context.lineTo(281, 183);
+        this.context.lineTo(281, 202);
+        this.drawDestinationRoomMarker(btnId);
+        break;
+      case "e219":
+        this.context.moveTo(648, 213);
+        this.context.lineTo(608, 141);
+        this.context.lineTo(519, 141);
+        this.context.lineTo(519, 202);
+        this.context.moveTo(519, 183);
+        this.context.lineTo(414, 183);
+        this.context.lineTo(414, 202);
+        this.drawDestinationRoomMarker(btnId);
+        break;
+      case "e228":
+        this.context.arc(610, 213, 35, 0, Math.PI, true);
+        this.context.lineTo(575, 517);
+        this.context.moveTo(575, 496);
+        this.context.lineTo(635, 496);
+        this.context.lineTo(637, 496);
+        this.context.lineTo(637, 518);
+        this.drawDestinationRoomMarker(btnId);
+        break;
+      default:
+        break;
+    }
+    this.context.stroke();
   }
 
   public drawPathFromStairCaseE(btnId: string) {
@@ -306,8 +360,6 @@ export class DrawPathService {
     this.context.strokeStyle = "lime";
     switch (btnId) {
       case "e227":
-      
-
         this.context.moveTo(200, 495);
         this.context.lineTo(200, 487);
         this.context.lineTo(430, 487);
@@ -325,6 +377,15 @@ export class DrawPathService {
 
   public drawDestinationRoomMarker(btnId: String) {
     switch (btnId) {
+      case "e212":
+        this.context.drawImage(this.destinationMarker, 149, 120);
+        break;
+      case "e218":
+        this.context.drawImage(this.destinationMarker, 322, 208);
+        break;
+      case "e219":
+        this.context.drawImage(this.destinationMarker, 450, 208);
+        break;
       case "e227":
         this.context.drawImage(this.destinationMarker, 470, 500);
         break;
