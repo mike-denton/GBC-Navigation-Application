@@ -74,6 +74,7 @@ export class EBuildingFloor2Page implements OnInit {
           options: [
             { text: "--- Please Select ---", value: "null" },
             { text: "E201", value: "e201" },
+            { text: "E203", value: "e203" },
             { text: "E208", value: "e208" },
             { text: "E212", value: "e212" },
             { text: "E213", value: "e213" },
@@ -89,7 +90,10 @@ export class EBuildingFloor2Page implements OnInit {
             { text: "E244", value: "e244" },
             { text: "E245", value: "e245" },
             { text: "E250", value: "e250" },
-            { text: "Washroom", value: "wr" },
+            { text: "C Building 2nd Floor", value: "cb2f" },
+            { text: "Information Center", value: "ifc" },
+            { text: "Security", value: "sec" },
+            { text: "Washrooms", value: "wrs" },
           ]
         }
       ]
@@ -135,7 +139,7 @@ export class EBuildingFloor2Page implements OnInit {
           areas = map.getElementsByTagName("area"),
           len = areas.length,
           coords = [],
-          previousWidth = window.innerWidth; // image original width
+          previousWidth = 839; // image original width replace with window.innerWidth when working on desktop
         for (n = 0; n < len; n++) {
           coords[n] = areas[n].coords.split(",");
         }
