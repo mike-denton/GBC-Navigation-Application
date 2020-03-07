@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> <p id="coords">co-ordinates</p></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <script></script>
+  <style></style>
+  <div class="ion-padding">
+    <div id="container">
+      <img
+        id="floor"
+        #image
+        class="img"
+        draggable="false"
+        src="assets/images/dBuildingFloor2.png"
+        alt="D Building Second Floor"
+        usemap="#dBuildingFloor2-map"
+        (load)="handleMouseMove();handleMapResize()"
+      />
+
+      <map name="dBuildingFloor2-map" id="map_id" #areaMap>
+        <area
+          alt="stairCaseD"  
+          id="stairCaseD"
+          title="stairCase D"
+          (click)="sendStairCaseId($event)"
+          coords="35,552,36,583,67,583,67,551"
+          shape="poly"
+        />
+
+        <!-- <area
+        alt="entrance"
+        id="entrance"
+        title="entrance"
+        (click)="sendStairCaseId($event)"
+        coords="668,203,720,227,643,272,628,226"
+        shape="poly"
+      /> -->
+      
+      </map>
+      <canvas id="mapCanvas" #canvasEl width="839" height="651"></canvas>
+    </div>
+  </div>
+</ion-content>

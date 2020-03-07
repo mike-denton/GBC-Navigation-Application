@@ -142,7 +142,7 @@ export class HomePage {
       if (pickerAction == 'done') {
         switch (col.options[col.selectedIndex].value){
           case 'floor2':
-            this.router.navigate(['/e-building-floor2'])
+            this.router.navigate(['/d-building-floor2'])
             break;
           case 'floor3':
             this.router.navigate(['/e-building-floor3'])
