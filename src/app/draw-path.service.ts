@@ -315,6 +315,17 @@ export class DrawPathService {
         this.context.lineTo(231, 473);
         this.drawDestinationRoomMarker(btnId);
         break;
+      case "e203":
+          this.context.moveTo(648, 213);
+          this.context.lineTo(608, 141);
+          this.context.lineTo(519, 141);
+          this.context.lineTo(519, 190);
+          this.context.lineTo(543, 190);
+          this.context.lineTo(543, 495);
+          this.context.lineTo(193, 495);
+          this.context.lineTo(193, 473);
+          this.drawDestinationRoomMarker(btnId);
+          break;
       case "e208":
         this.context.moveTo(648, 213);
         this.context.lineTo(608, 141);
@@ -474,6 +485,18 @@ export class DrawPathService {
         this.context.lineTo(279, 468);
         this.drawDestinationRoomMarker(btnId);
         break;
+      case "ifc":
+          this.context.moveTo(648, 213);
+          this.context.lineTo(610, 130);
+          this.context.lineTo(669, 103);
+          this.drawDestinationRoomMarker(btnId);
+          break;
+      case "sec":
+        this.context.moveTo(648, 213);
+        this.context.lineTo(633, 173);
+        this.context.lineTo(674, 160);
+        this.drawDestinationRoomMarker(btnId);
+        break;
       case "wrs":
         this.context.moveTo(648, 213);
         this.context.lineTo(608, 141);
@@ -515,8 +538,11 @@ export class DrawPathService {
   public drawDestinationRoomMarker(btnId: String) {
     switch (btnId) {
       case "e201":
-        this.context.drawImage(this.destinationMarker, 210, 440);
+        this.context.drawImage(this.destinationMarker, 210, 435);
         break;
+      case "e203":
+          this.context.drawImage(this.destinationMarker, 177, 435);
+          break;
       case "e208":
         this.context.drawImage(this.destinationMarker, 210, 251);
         break;
@@ -561,6 +587,12 @@ export class DrawPathService {
         break;
       case "e250":
         this.context.drawImage(this.destinationMarker, 275, 430);
+        break;
+      case "ifc":
+        this.context.drawImage(this.destinationMarker, 660,70);
+        break;
+      case "sec":
+        this.context.drawImage(this.destinationMarker, 665,130);
         break;
       case "wrs":
         this.context.drawImage(this.destinationMarker, 210, 360);

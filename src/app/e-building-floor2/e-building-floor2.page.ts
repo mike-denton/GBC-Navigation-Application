@@ -90,7 +90,7 @@ export class EBuildingFloor2Page implements OnInit {
             { text: "E244", value: "e244" },
             { text: "E245", value: "e245" },
             { text: "E250", value: "e250" },
-            { text: "C Building 2nd Floor", value: "cb2f" },
+            //{ text: "C Building 2nd Floor", value: "cb2f" },
             { text: "Information Center", value: "ifc" },
             { text: "Security", value: "sec" },
             { text: "Washrooms", value: "wrs" },
@@ -139,7 +139,7 @@ export class EBuildingFloor2Page implements OnInit {
           areas = map.getElementsByTagName("area"),
           len = areas.length,
           coords = [],
-          previousWidth = 839; // image original width replace with window.innerWidth when working on desktop
+            previousWidth = window.innerWidth // image original width replace with window.innerWidth when working on desktop
         for (n = 0; n < len; n++) {
           coords[n] = areas[n].coords.split(",");
         }
