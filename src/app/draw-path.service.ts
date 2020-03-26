@@ -290,7 +290,7 @@ export class DrawPathService {
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         this.context.drawImage(this.originMarker, 655,205);
         break;
-      case "stairCaseE":
+      case "stairCaseD":
         this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
         this.context.drawImage(this.originMarker, 183, 495);
         break;
@@ -313,19 +313,19 @@ export class DrawPathService {
         this.context.lineTo(543, 495);
         this.context.lineTo(231, 495);
         this.context.lineTo(231, 473);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e203":
-          this.context.moveTo(648, 213);
-          this.context.lineTo(608, 141);
-          this.context.lineTo(519, 141);
-          this.context.lineTo(519, 190);
-          this.context.lineTo(543, 190);
-          this.context.lineTo(543, 495);
-          this.context.lineTo(193, 495);
-          this.context.lineTo(193, 473);
-          this.drawDestinationRoomMarker(btnId);
-          break;
+        this.context.moveTo(648, 213);
+        this.context.lineTo(608, 141);
+        this.context.lineTo(519, 141);
+        this.context.lineTo(519, 190);
+        this.context.lineTo(543, 190);
+        this.context.lineTo(543, 495);
+        this.context.lineTo(193, 495);
+        this.context.lineTo(193, 473);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
       case "e208":
         this.context.moveTo(648, 213);
         this.context.lineTo(608, 141);
@@ -335,7 +335,7 @@ export class DrawPathService {
         this.context.lineTo(253, 168);
         this.context.lineTo(253, 282);
         this.context.lineTo(238, 282);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e212":
         this.context.moveTo(648, 213);
@@ -345,17 +345,17 @@ export class DrawPathService {
         this.context.moveTo(521, 168);
         this.context.lineTo(165, 168);
         this.context.lineTo(165, 152);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e213":
-          this.context.moveTo(648, 213);
-          this.context.lineTo(608, 141);
-          this.context.lineTo(519, 141);
-          this.context.lineTo(519, 168);
-          this.context.lineTo(200, 168);
-          this.context.lineTo(200, 152);
-          this.drawDestinationRoomMarker(btnId);
-          break;
+        this.context.moveTo(648, 213);
+        this.context.lineTo(608, 141);
+        this.context.lineTo(519, 141);
+        this.context.lineTo(519, 168);
+        this.context.lineTo(200, 168);
+        this.context.lineTo(200, 152);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
       case "e218":
         this.context.moveTo(648, 213);
         this.context.lineTo(608, 141);
@@ -365,9 +365,8 @@ export class DrawPathService {
         this.context.lineTo(387, 202);
         this.context.moveTo(387, 183);
         this.context.lineTo(281, 183);
-        this.context.lineTo(281, 183);
         this.context.lineTo(281, 202);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e219":
         this.context.moveTo(648, 213);
@@ -377,7 +376,7 @@ export class DrawPathService {
         this.context.moveTo(519, 183);
         this.context.lineTo(414, 183);
         this.context.lineTo(414, 202);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e220":
         this.context.moveTo(648, 213);
@@ -388,7 +387,7 @@ export class DrawPathService {
         this.context.lineTo(253, 168);
         this.context.lineTo(253, 404);
         this.context.lineTo(276, 404);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e223":
         this.context.moveTo(648, 213);
@@ -399,7 +398,7 @@ export class DrawPathService {
         this.context.lineTo(543, 482);
         this.context.lineTo(392, 482);
         this.context.lineTo(392, 456);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e224":
         this.context.moveTo(648, 213);
@@ -412,7 +411,7 @@ export class DrawPathService {
         this.context.lineTo(408, 456);
         this.context.moveTo(521, 482);
         this.context.lineTo(521, 456);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e225":
         this.context.moveTo(648, 213);
@@ -426,7 +425,7 @@ export class DrawPathService {
         this.context.moveTo(331, 495);
         this.context.lineTo(216, 495);
         this.context.lineTo(216, 518);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e226":
         this.context.moveTo(648, 213);
@@ -437,7 +436,7 @@ export class DrawPathService {
         this.context.lineTo(543, 495);
         this.context.lineTo(358, 495);
         this.context.lineTo(358, 518);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e227":
         this.context.moveTo(648, 213);
@@ -449,7 +448,7 @@ export class DrawPathService {
         this.context.moveTo(543, 495);
         this.context.lineTo(432, 495);
         this.context.lineTo(432, 518);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e228":
         this.context.arc(610, 213, 35, 0, Math.PI, true);
@@ -458,21 +457,21 @@ export class DrawPathService {
         this.context.lineTo(635, 496);
         this.context.lineTo(637, 496);
         this.context.lineTo(637, 518);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e244":
         this.context.arc(610, 213, 35, 0, Math.PI, true);
         this.context.lineTo(575, 480);
         this.context.lineTo(640, 480);
         this.context.lineTo(640, 450);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e245":
         this.context.arc(610, 213, 35, 0, Math.PI, true);
         this.context.lineTo(575, 480);
         this.context.lineTo(670, 480);
         this.context.lineTo(670, 506);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e250":
         this.context.moveTo(648, 213);
@@ -483,19 +482,19 @@ export class DrawPathService {
         this.context.lineTo(543, 482);
         this.context.lineTo(279, 482);
         this.context.lineTo(279, 468);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "ifc":
-          this.context.moveTo(648, 213);
-          this.context.lineTo(610, 130);
-          this.context.lineTo(669, 103);
-          this.drawDestinationRoomMarker(btnId);
-          break;
+        this.context.moveTo(648, 213);
+        this.context.lineTo(610, 130);
+        this.context.lineTo(669, 103);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
       case "sec":
         this.context.moveTo(648, 213);
         this.context.lineTo(633, 173);
         this.context.lineTo(674, 160);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "wrs":
         this.context.moveTo(648, 213);
@@ -506,7 +505,7 @@ export class DrawPathService {
         this.context.lineTo(253, 168);
         this.context.lineTo(253, 370);
         this.context.lineTo(239, 370);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       default:
         break;
@@ -514,11 +513,116 @@ export class DrawPathService {
     this.context.stroke();
   }
 
-  public drawPathFromStairCaseE(btnId: string) {
+  public drawPathFromStairCaseD(btnId: string) {
     this.context.beginPath();
     this.context.lineWidth = 5;
     this.context.strokeStyle = "lime";
     switch (btnId) {
+      case "e201":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(231, 487);
+        this.context.lineTo(231, 473);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e203":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(193, 487);
+        this.context.lineTo(193, 473);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e208":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 282);
+        this.context.lineTo(238, 282);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e212":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 168);
+        this.context.lineTo(200, 168);
+        this.context.lineTo(165, 168);
+        this.context.lineTo(165, 152);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e213":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 168);
+        this.context.lineTo(200, 168);
+        this.context.lineTo(200, 152);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e218":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 183);
+        this.context.lineTo(281, 183);
+        this.context.lineTo(281, 202);
+        this.context.moveTo(281, 183);
+        this.context.lineTo(386, 183);
+        this.context.lineTo(386, 202);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e219":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 183);
+        this.context.lineTo(414, 183);
+        this.context.lineTo(414, 202);
+        this.context.moveTo(414, 183);
+        this.context.lineTo(520, 183);
+        this.context.lineTo(520, 202);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e220":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 404);
+        this.context.lineTo(276, 404);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e223":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(392, 487);
+        this.context.lineTo(392, 456);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e224":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(520, 487);
+        this.context.lineTo(520, 456);
+        this.context.moveTo(408, 487);
+        this.context.lineTo(408, 456);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e225":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(330, 487);
+        this.context.lineTo(331, 518);
+        this.context.moveTo(217, 487);
+        this.context.lineTo(217, 518);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e226":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(358, 487);
+        this.context.lineTo(358, 518);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
       case "e227":
         this.context.moveTo(200, 495);
         this.context.lineTo(200, 487);
@@ -527,7 +631,61 @@ export class DrawPathService {
         this.context.moveTo(430, 487);
         this.context.lineTo(540, 487);
         this.context.lineTo(540, 518);
-        this.drawDestinationRoomMarker(btnId);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e228":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(637, 487);
+        this.context.lineTo(637, 518);
+        this.context.moveTo(571, 487);
+        this.context.lineTo(571, 518);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e244":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(640, 487);
+        this.context.lineTo(640, 450);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e245":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(670, 487);
+        this.context.lineTo(670, 506);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "e250":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(279, 487);
+        this.context.lineTo(279, 468);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "ifc":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(578, 487);
+        this.context.lineTo(578, 103);
+        this.context.lineTo(669, 103);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "sec":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(578, 487);
+        this.context.lineTo(578, 160);
+        this.context.lineTo(674, 160);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
+        break;
+      case "wrs":
+        this.context.moveTo(200, 495);
+        this.context.lineTo(200, 487);
+        this.context.lineTo(253, 487);
+        this.context.lineTo(253, 370);
+        this.context.lineTo(239, 370);
+        this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       default:
         break;
@@ -535,14 +693,14 @@ export class DrawPathService {
     this.context.stroke();
   }
 
-  public drawDestinationRoomMarker(btnId: String) {
+  public drawEbuildingFloor2_DestinationMarker(btnId: String) {
     switch (btnId) {
       case "e201":
         this.context.drawImage(this.destinationMarker, 210, 435);
         break;
       case "e203":
-          this.context.drawImage(this.destinationMarker, 177, 435);
-          break;
+        this.context.drawImage(this.destinationMarker, 177, 435);
+        break;
       case "e208":
         this.context.drawImage(this.destinationMarker, 210, 251);
         break;

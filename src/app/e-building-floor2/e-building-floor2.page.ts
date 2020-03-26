@@ -32,11 +32,11 @@ export class EBuildingFloor2Page implements OnInit {
   ngOnInit() {
     this.dps.context = (this.canvasEl
       .nativeElement as HTMLCanvasElement).getContext("2d");
+    
   }
 
   private sendStairCaseId(event) {
     this.roomsPicker();
-    console.log(event.target.id);
     this.stairCase = event.target.id;
     this.dps.drawEbuildingFloor2_OriginMarker(this.stairCase);
   }
@@ -111,8 +111,8 @@ export class EBuildingFloor2Page implements OnInit {
           case "entrance":
             this.dps.drawPathFromEntranceE(rooms.options[rooms.selectedIndex].value);
             break;
-          case "stairCaseE":
-            this.dps.drawPathFromStairCaseE(rooms.options[rooms.selectedIndex].value);
+          case "stairCaseD":
+            this.dps.drawPathFromStairCaseD(rooms.options[rooms.selectedIndex].value);
             break;
           default:
             break;
