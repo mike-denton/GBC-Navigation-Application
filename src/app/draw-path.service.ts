@@ -465,7 +465,6 @@ export class DrawPathService {
         this.context.arc(610, 213, 35, 0, Math.PI, true);
         this.context.lineTo(575, 517);
         this.context.moveTo(575, 496);
-        this.context.lineTo(635, 496);
         this.context.lineTo(637, 496);
         this.context.lineTo(637, 518);
         this.drawEbuildingFloor2_DestinationMarker(btnId);
