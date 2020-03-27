@@ -111,6 +111,9 @@ export class EBuildingFloor2Page implements OnInit {
           case "entrance":
             this.dps.drawPathFromEntranceE(rooms.options[rooms.selectedIndex].value);
             break;
+          case "stairCaseB":
+            this.dps.drawPathFromStairCaseB(rooms.options[rooms.selectedIndex].value);
+            break;
           case "stairCaseC":
             this.dps.drawPathFromStairCaseC(rooms.options[rooms.selectedIndex].value);
             break;

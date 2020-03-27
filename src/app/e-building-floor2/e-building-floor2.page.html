@@ -22,12 +22,20 @@
 
       <map name="eBuildingFloor2-map" id="map_id" #areaMap>
         <area
-          alt="stairCaseD"
-          id="stairCaseD"
-          title="stairCase D"
-          (click)="sendStairCaseId($event)"
-          coords="179,507,179,544,206,544,206,507"
-          shape="poly"
+        alt="entrance"
+        id="entrance"
+        title="entrance"
+        (click)="sendStairCaseId($event)"
+        coords="668,203,720,227,643,272,628,226"
+        shape="poly"
+        />
+        <area
+        alt="stairCaseB"
+        id="stairCaseB"
+        title="stairCase B"
+        (click)="sendStairCaseId($event)"
+        coords="436,135,488,161" 
+        shape="rect"
         />
         <area
         alt="stairCaseC"
@@ -36,15 +44,15 @@
         (click)="sendStairCaseId($event)"
         coords="153,451,180,451,180,469,181,491,164,491,163,472,153,472"
         shape="poly"
-      />
+        />
         <area
-        alt="entrance"
-        id="entrance"
-        title="entrance"
-        (click)="sendStairCaseId($event)"
-        coords="668,203,720,227,643,272,628,226"
-        shape="poly"
-      />
+          alt="stairCaseD"
+          id="stairCaseD"
+          title="stairCase D"
+          (click)="sendStairCaseId($event)"
+          coords="179,507,179,544,206,544,206,507"
+          shape="poly"
+        />
       </map>
       <canvas id="mapCanvas" #canvasEl width="839" height="651"></canvas>
     </div>
