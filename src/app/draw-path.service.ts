@@ -28,50 +28,21 @@ export class DrawPathService {
   }
 
   public drawOriginMarker(parkingId: String) {
+    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     switch (parkingId) {
       case "parkingA":
-        this.context.clearRect(
-          0,
-          0,
-          this.context.canvas.width,
-          this.context.canvas.height
-        );
         this.context.drawImage(this.originMarker, 315, 260);
         break;
       case "parkingB":
-        this.context.clearRect(
-          0,
-          0,
-          this.context.canvas.width,
-          this.context.canvas.height
-        );
         this.context.drawImage(this.originMarker, 295, 132);
         break;
       case "parkingC":
-        this.context.clearRect(
-          0,
-          0,
-          this.context.canvas.width,
-          this.context.canvas.height
-        );
         this.context.drawImage(this.originMarker, 121, 138);
         break;
       case "parkingD":
-        this.context.clearRect(
-          0,
-          0,
-          this.context.canvas.width,
-          this.context.canvas.height
-        );
         this.context.drawImage(this.originMarker, 160, 243);
         break;
       case "parkingF":
-        this.context.clearRect(
-          0,
-          0,
-          this.context.canvas.width,
-          this.context.canvas.height
-        );
         this.context.drawImage(this.originMarker, 295, 173);
         break;
       default:
