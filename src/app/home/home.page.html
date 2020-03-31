@@ -18,9 +18,7 @@
         <area alt="parkingD" id="parkingD" title="parking D" (click)="sendParkingId($event)" coords="155,258,198,287" shape="rect">
         <area alt="parkingF" id="parkingF" title="parking F" (click)="sendParkingId($event)" coords="294,188,329,212" shape="rect">
         <!-- Building C -->
-        <area alt="buildingC" id="buildingC" title="building C" coords="270,108,238,108,237,115,221,115,220,125,205,126,205,155,271,156" shape="poly">
-        <area alt="buildingC" id="buildingC" title="building C" coords="231,169,167,160,169,145,191,142,191,149,234,150" shape="poly">
-        <area alt="buildingC" id="buildingC" title="building C" coords="176,162,221,169,221,192,196,192,193,178,176,178" shape="poly">
+        <area alt="buildingC" id="buildingC" title="building C" (click)=sendBuildingId($event) coords="270,107,237,107,236,116,221,116,220,126,204,127,204,149,191,149,190,143,167,144,167,162,175,162,176,178,192,178,193,191,220,192,220,169,231,170,232,155,271,155" shape="poly">
         <!-- Building D -->
         <area alt="buildingD" id="buildingD" title="building D" coords="194,217,208,217,208,226,222,217,222,190,190,190,166,192,164,231,194,231" shape="poly">
         <!-- Building E -->

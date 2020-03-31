@@ -954,9 +954,8 @@ export class DrawPathService {
         this.drawEbuildingFloor2_DestinationMarker(btnId);
         break;
       case "e208":
-        this.context.moveTo(648, 213);
-        this.context.lineTo(608, 141);
-        this.context.lineTo(519, 141);
+        this.context.moveTo(490, 148);
+        this.context.lineTo(519, 148);
         this.context.lineTo(519, 168);
         this.context.moveTo(521, 168);
         this.context.lineTo(253, 168);

@@ -1,0 +1,28 @@
+ion-content{
+    --ion-background-color:#666666;
+    --overflow: hidden;
+}
+
+.img {
+    position: absolute;
+    z-index: 1;
+}
+
+#container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#mapCanvas {
+    position: relative;
+    z-index: 1;
+	pointer-events: none;
+	max-width: 100%;
+	max-height: 100%;
+}

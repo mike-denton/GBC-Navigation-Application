@@ -37,8 +37,19 @@ export class HomePage {
   }
 
   private sendBuildingId(event){
-    this.floorsPicker();
     this.building = event.target.id;
+    switch (this.building){
+      case 'buildingC':
+        this.cBuildingFloorsPicker();
+        break;
+      case 'buildingD':
+        break;
+      case 'buildingE':
+        this.eBuildingFloorsPicker();
+        break;
+      default:
+        break;
+    }
   }
  
   async buildingsPicker(){
@@ -104,7 +115,7 @@ export class HomePage {
   }
 
 
-  async floorsPicker(){
+  async eBuildingFloorsPicker(){
     let pickerAction;
     let floors: PickerOptions = {
       buttons: [
@@ -123,9 +134,10 @@ export class HomePage {
       columns: [
         {
           name: 'floors',
+          selectedIndex: -1,
           options: [
             { text: '--- Please Select ---', value: 'null'},
-            { text: 'Basement', value:'basement'},
+            { text: 'Basement', value:'basement' },
             { text: '1st Floor', value: 'floor1' },
             { text: '2nd Floor', value: 'floor2' },
             { text: '3rd Floor', value: 'floor3' },
@@ -144,8 +156,54 @@ export class HomePage {
           case 'floor2':
             this.router.navigate(['/e-building-floor2'])
             break;
-          case 'floor3':
-            this.router.navigate(['/e-building-floor3'])
+          default:
+            break;
+        }
+      }else{
+      }
+    });
+  }
+
+  async cBuildingFloorsPicker(){
+    let pickerAction;
+    let floors: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Done',
+          role: 'done',
+          handler: value => {
+            pickerAction = 'done';
+          }
+        }
+      ],
+      columns: [
+        {
+          name: 'floors',
+          cssClass: 'test',
+          options: [
+            { text: '--- Please Select ---', value: 'null'},
+            { text: '1st Floor', value: 'floor1' },
+            { text: '2nd Floor', value: 'floor2' },
+            { text: '3rd Floor', value: 'floor3' },
+            { text: '4th Floor', value: 'floor4' },
+            { text: '5th Floor', value: 'floor5' }
+          ]
+        }
+      ]
+    };
+
+    let picker = await this.pickerCtrl.create(floors);
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('floors');
+      if (pickerAction == 'done') {
+        switch (col.options[col.selectedIndex].value){
+          case 'floor2':
+            this.router.navigate(['/c-building-floor2'])
             break;
           default:
             break;
