@@ -22,11 +22,36 @@
 
       <map name="dBuildingFloor2-map" id="map_id" #areaMap>
         <area
-          alt="stairCaseD"  
+          alt="stairCaseD"
           id="stairCaseD"
           title="stairCase D"
           (click)="sendStairCaseId($event)"
           coords="35,552,36,583,67,583,67,551"
+          shape="poly"
+        />
+
+        <area
+          alt="stairCaseD_b"
+          id="stairCaseD_b"
+          title="stairCase D_b"
+          (click)="sendStairCaseId($event)"
+          coords="370,140,372,175,408,176,409,140"
+          shape="poly"
+        />
+        <area
+          alt="stairCaseD_c"
+          id="stairCaseD_c"
+          title="stairCaseD_c"
+          (click)="sendStairCaseId($event)"
+          coords="402,468,436,467,437,502,402,502"
+          shape="poly"
+        />
+        <area
+          alt="stairCaseD_d"
+          id="stairCaseD_d"
+          title="stairCaseD_d"
+          (click)="sendStairCaseId($event)"
+          coords="735,217,764,216,764,242,736,243"
           shape="poly"
         />
 
@@ -38,7 +63,6 @@
         coords="668,203,720,227,643,272,628,226"
         shape="poly"
       /> -->
-      
       </map>
       <canvas id="mapCanvas" #canvasEl width="839" height="651"></canvas>
     </div>

@@ -89,6 +89,7 @@ export class DBuildingFloor2Page implements OnInit {
             { text: "D241", value: "d241" },
             { text: "D245", value: "d245" },
             { text: "D284", value: "d284" },
+            { text: "Elevator", value: "elevator" },
             { text: "C Building 3rd Floor", value: "cb3f" },
             { text: "E Building 2nd Floor", value: "eb2f" },
             { text: "Washrooms", value: "wrs" },
@@ -106,12 +107,23 @@ export class DBuildingFloor2Page implements OnInit {
           this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
         }
         switch (this.stairCase) {
-          case "entrance":
-            this.dps.drawPathFromEntranceD(rooms.options[rooms.selectedIndex].value);
-            break;
+
           case "stairCaseD":
             this.dps.drawPathFromStairCaseD(rooms.options[rooms.selectedIndex].value);
             break;
+
+          case "stairCaseD_b":
+            this.dps.drawPathFromStairCaseD_b(rooms.options[rooms.selectedIndex].value);
+            break;
+          
+          case "stairCaseD_c":
+            this.dps.drawPathFromStairCaseD_c(rooms.options[rooms.selectedIndex].value);
+            break;
+
+          case "stairCaseD_d":
+            this.dps.drawPathFromStairCaseD_d(rooms.options[rooms.selectedIndex].value);
+            break;
+           
           default:
             break;
         }
