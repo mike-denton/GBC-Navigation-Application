@@ -604,7 +604,7 @@ export class DrawPathService {
     }
   }
 
-  public drawPathFromStairCaseD(btnId: string) {
+  public drawPathFromStairCaseD_x(btnId: string) {
     this.context.beginPath();
     this.context.lineWidth = 5;
     this.context.strokeStyle = "lime";

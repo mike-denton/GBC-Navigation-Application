@@ -109,7 +109,7 @@ export class DBuildingFloor2Page implements OnInit {
         switch (this.stairCase) {
 
           case "stairCaseD":
-            this.dps.drawPathFromStairCaseD(rooms.options[rooms.selectedIndex].value);
+            this.dps.drawPathFromStairCaseD_x(rooms.options[rooms.selectedIndex].value);
             break;
 
           case "stairCaseD_b":
