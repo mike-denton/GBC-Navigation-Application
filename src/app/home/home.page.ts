@@ -43,6 +43,7 @@ export class HomePage {
         this.cBuildingFloorsPicker();
         break;
       case 'buildingD':
+        this.dBuildingFloorsPicker();
         break;
       case 'buildingE':
         this.eBuildingFloorsPicker();
@@ -114,6 +115,97 @@ export class HomePage {
     });
   }
 
+  async cBuildingFloorsPicker(){
+    let pickerAction;
+    let floors: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Done',
+          role: 'done',
+          handler: value => {
+            pickerAction = 'done';
+          }
+        }
+      ],
+      columns: [
+        {
+          name: 'floors',
+          options: [
+            { text: '--- Please Select ---', value: 'null'},
+            { text: '1st Floor', value: 'floor1' },
+            { text: '2nd Floor', value: 'floor2' },
+            { text: '3rd Floor', value: 'floor3' },
+            { text: '4th Floor', value: 'floor4' },
+            { text: '5th Floor', value: 'floor5' }
+          ]
+        }
+      ]
+    };
+
+    let picker = await this.pickerCtrl.create(floors);
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('floors');
+      if (pickerAction == 'done') {
+        switch (col.options[col.selectedIndex].value){
+          case 'floor2':
+            this.router.navigate(['/c-building-floor2'])
+            break;
+          default:
+            break;
+        }
+      }else{
+      }
+    });
+  }
+
+  async dBuildingFloorsPicker(){
+    let pickerAction;
+    let floors: PickerOptions = {
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Done',
+          role: 'done',
+          handler: value => {
+            pickerAction = 'done';
+          }
+        }
+      ],
+      columns: [
+        {
+          name: 'floors',
+          options: [
+            { text: '--- Please Select ---', value: 'null'},
+            { text: '2nd Floor', value: 'floor2' }
+          ]
+        }
+      ]
+    };
+
+    let picker = await this.pickerCtrl.create(floors);
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('floors');
+      if (pickerAction == 'done') {
+        switch (col.options[col.selectedIndex].value){
+          case 'floor2':
+            this.router.navigate(['/d-building-floor2'])
+            break;
+          default:
+            break;
+        }
+      }else{
+      }
+    });
+  }
 
   async eBuildingFloorsPicker(){
     let pickerAction;
@@ -154,56 +246,7 @@ export class HomePage {
       if (pickerAction == 'done') {
         switch (col.options[col.selectedIndex].value){
           case 'floor2':
-            this.router.navigate(['/d-building-floor2'])
-            break;
-          default:
-            break;
-        }
-      }else{
-      }
-    });
-  }
-
-  async cBuildingFloorsPicker(){
-    let pickerAction;
-    let floors: PickerOptions = {
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        },
-        {
-          text: 'Done',
-          role: 'done',
-          handler: value => {
-            pickerAction = 'done';
-          }
-        }
-      ],
-      columns: [
-        {
-          name: 'floors',
-          cssClass: 'test',
-          options: [
-            { text: '--- Please Select ---', value: 'null'},
-            { text: '1st Floor', value: 'floor1' },
-            { text: '2nd Floor', value: 'floor2' },
-            { text: '3rd Floor', value: 'floor3' },
-            { text: '4th Floor', value: 'floor4' },
-            { text: '5th Floor', value: 'floor5' }
-          ]
-        }
-      ]
-    };
-
-    let picker = await this.pickerCtrl.create(floors);
-    picker.present();
-    picker.onDidDismiss().then(async data => {
-      let col = await picker.getColumn('floors');
-      if (pickerAction == 'done') {
-        switch (col.options[col.selectedIndex].value){
-          case 'floor2':
-            this.router.navigate(['/c-building-floor2'])
+            this.router.navigate(['/e-building-floor2'])
             break;
           default:
             break;
