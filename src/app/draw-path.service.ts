@@ -252,9 +252,9 @@ export class DrawPathService {
         break;
     }
   }
-
   // * MAIN PAGE END *
 
+  // * E BUILDING START *
   public drawEbuildingFloor2_OriginMarker(stairCaseId: string) {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     switch (stairCaseId) {
@@ -1768,4 +1768,1858 @@ export class DrawPathService {
         break;
     }
   }
+  // * E BUILDING END *
+
+  // * D BUILDING START *
+  public drawDbuildingFloor2_OriginMarker(stairCaseId: string) {
+    switch (stairCaseId) {
+      case "entrance":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 655,205);
+        break;
+
+      case "stairCaseD":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 35, 540);
+        break;
+
+      case "stairCaseD_b":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 373, 130);
+        break;
+
+      case "stairCaseD_c":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 403, 454);
+        break;
+
+      case "stairCaseD_d":
+        this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+        this.context.drawImage(this.originMarker, 733, 200);
+        break;        
+
+      default:
+        break;
+    }
+  }
+
+  public drawPathFromStairCaseD_x(btnId: string) {
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId) {
+
+      case "emg":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.lineTo(641, 429);
+        this.context.moveTo(610, 420);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "cb3f": 
+        this.context.moveTo(67,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 245);
+        this.context.lineTo(282, 245);
+        this.context.lineTo(282, 195);
+        this.context.lineTo(403, 197);
+        this.context.lineTo(430, 197);
+        this.context.lineTo(430, 135);
+        this.context.lineTo(418, 135);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "eb2f":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(677, 276);
+        this.context.lineTo(677, 196);
+        this.context.lineTo(739, 196);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "wrs":
+        this.context.moveTo(67,554);
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 337);
+        this.context.lineTo(148, 337);
+        this.context.lineTo(114, 337);
+        this.context.lineTo(114, 251);
+        this.context.lineTo(168, 251);
+        this.context.lineTo(168, 255);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "elevator":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 459);
+      break;
+      
+      case "d201":
+        this.context.moveTo(67,554);
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 423);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d202":
+        this.context.moveTo(67,554);
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 463);
+        this.context.lineTo(121, 463);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d205":
+        this.context.moveTo(67,554);
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 399);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d206":
+        this.context.moveTo(67,554);
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 399);
+
+        this.context.moveTo(169, 400);        
+        this.context.lineTo(114, 399);
+        this.context.lineTo(114, 245);
+        this.context.lineTo(198, 245);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d209a":
+        this.context.moveTo(65,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 248);
+        this.context.lineTo(100, 248);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d209":
+        this.context.moveTo(65,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 279);
+        this.context.lineTo(91, 279);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d210":
+        this.context.moveTo(65,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 248);
+        this.context.lineTo(100, 248);
+        this.context.lineTo(100, 231);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d211":
+        this.context.moveTo(65,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 240);
+        this.context.lineTo(244, 240);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d212":
+        this.context.moveTo(67,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 245);
+        this.context.lineTo(282, 245);
+        this.context.lineTo(282, 250);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d214":
+        this.context.moveTo(67,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 245);
+        this.context.lineTo(282, 245);
+        this.context.lineTo(282, 195);
+        this.context.lineTo(403, 197);
+        this.context.lineTo(403, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d216":
+        this.context.moveTo(67,554);
+        this.context.lineTo(119, 554);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 245);
+        this.context.lineTo(282, 245);
+        this.context.lineTo(282, 195);
+        this.context.lineTo(403, 197);
+        this.context.lineTo(445, 197);
+        this.context.lineTo(445, 199);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;      
+
+      case "d218":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 331);
+        this.context.lineTo(596, 331);
+        this.context.moveTo(610, 420);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(493, 195);
+        this.context.lineTo(493, 205);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d222":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(420, 441);
+        this.context.lineTo(420, 435);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d224":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 436);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d226":
+        this.context.moveTo(65,554);
+        this.context.lineTo(337, 554);
+        this.context.lineTo(337, 437);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;      
+
+      case "d227":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d229":
+        this.context.moveTo(65,554);
+        this.context.lineTo(220, 554);
+        this.context.lineTo(220, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d230":
+        this.context.moveTo(67,554);
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 523);
+        this.context.lineTo(121, 523);
+        // this.context.moveTo(245, 554);
+        // this.context.moveTo(243, 545);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d231":
+        this.context.moveTo(65,554);
+        this.context.lineTo(201, 554);
+        this.context.lineTo(201, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d233":
+        this.context.moveTo(65,554);
+        this.context.lineTo(162, 554);
+        this.context.lineTo(162, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d235a":
+        this.context.moveTo(65,554);
+        this.context.lineTo(125, 554);
+        this.context.lineTo(125, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+
+      case "d237":
+        this.context.moveTo(65,554);
+        this.context.lineTo(89, 554);
+        this.context.lineTo(89, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d241":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.moveTo(610, 420);
+        this.context.lineTo(610, 342);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d245":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(677, 276);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d284":
+        this.context.moveTo(65,554);
+        this.context.lineTo(351, 554);
+        this.context.lineTo(351, 546);
+        this.context.lineTo(364, 546);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      default:
+        break;
+    }
+    this.context.stroke();
+  }
+
+  public drawPathFromStairCaseD_b(btnId: string) {
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId) {
+
+      case "emg":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.lineTo(641, 429);
+        this.context.moveTo(610, 420);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "cb3f": 
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(403, 197);
+        this.context.lineTo(430, 197);
+        this.context.lineTo(430, 135);
+        this.context.lineTo(418, 135);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "eb2f":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(677, 276);
+
+        this.context.lineTo(677, 196);
+        this.context.lineTo(739, 196);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "wrs":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+
+        this.context.lineTo(169, 244);
+        this.context.lineTo(169, 256);
+        this.context.lineTo(169, 244);
+
+        this.context.lineTo(115, 244);
+        this.context.lineTo(115, 337);
+        this.context.lineTo(145, 337);
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "elevator":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 459);
+      break;
+
+      case "d201":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 423);
+        this.context.lineTo(112, 423);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d202":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 461);
+        this.context.lineTo(122, 461);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d205":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(112, 399);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d206":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(196, 244);
+        this.context.moveTo(169, 400);        
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 245);
+        this.context.lineTo(198, 245);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d209a":
+
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(97, 244);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d209":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 279);
+        this.context.lineTo(91, 279);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d210":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(100, 244);
+        this.context.lineTo(100, 231);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d211":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 240);
+        this.context.lineTo(119, 240);
+        this.context.lineTo(244, 240);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d212":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 250);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d214":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(402, 195);
+        this.context.lineTo(402, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d216":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(445, 195);
+        this.context.lineTo(445, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;      
+
+      case "d218":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(492, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(493, 195);
+        this.context.lineTo(493, 205);
+
+        this.context.lineTo(492, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(596, 331);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d222":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(422, 441);
+        this.context.lineTo(422, 438);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d224":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 435);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d226":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(337, 437);
+        this.context.lineTo(337, 522);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;      
+
+      case "d227":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d229":
+
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+        
+        this.context.lineTo(220, 553);
+        this.context.lineTo(220, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d230":
+        this.context.moveTo(369,157);
+        this.context.lineTo(282, 157);
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 522);
+        this.context.lineTo(120, 543);
+        this.context.lineTo(245, 543);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d231":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(200, 553);
+        this.context.lineTo(200, 563);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d233":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(165, 553); 
+        this.context.lineTo(165, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d235a":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(126, 553); 
+        this.context.lineTo(126, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d237":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(88, 553); 
+        this.context.lineTo(88, 563);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d241":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.moveTo(610, 420);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d245":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(677, 276);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d284":
+        this.context.moveTo(369,157);
+        this.context.lineTo(296, 157);
+        this.context.lineTo(296, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 522);
+
+        this.context.lineTo(351, 546);
+        this.context.lineTo(364, 546);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      default:
+        break;
+    }
+    this.context.stroke();
+  }
+
+  public drawPathFromStairCaseD_c(btnId: string) {
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId) {
+
+      case "emg":
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+
+        this.context.lineTo(610, 439);
+
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.lineTo(641, 429);
+        this.context.moveTo(610, 420);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "cb3f": 
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(610, 439);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(435, 195);
+
+        this.context.lineTo(435, 134);
+        this.context.lineTo(419, 134);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "eb2f":
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(610, 439);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(677, 276);
+
+        this.context.lineTo(677, 196);
+        this.context.lineTo(739, 196);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "wrs":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 333);
+
+        this.context.lineTo(145, 333);
+
+        this.context.lineTo(114, 333);
+        this.context.lineTo(114, 251);
+
+        this.context.lineTo(168, 251);
+        this.context.lineTo(168, 255);
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "elevator":
+        this.context.moveTo(416,453);
+
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 459);
+      break;
+
+      case "d201":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 423);
+
+        this.context.lineTo(112, 423);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d202":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 543);
+
+        this.context.lineTo(245, 543);
+        this.context.lineTo(119, 543);        
+
+        this.context.lineTo(119, 463);
+        this.context.lineTo(120, 463);
+
+        this.context.lineTo(121, 463);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d205":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 399);
+
+        this.context.lineTo(112, 399);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d206":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 399);
+
+        this.context.moveTo(169, 400);        
+        this.context.lineTo(114, 399);
+        this.context.lineTo(114, 245);
+        this.context.lineTo(198, 245);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d209a":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+
+        this.context.lineTo(114, 279);
+
+        this.context.lineTo(97, 244);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d209":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+
+        this.context.lineTo(114, 279);
+
+        this.context.lineTo(91, 279);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d210":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 279);
+
+        this.context.lineTo(97, 231);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d211":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 279);
+
+        this.context.lineTo(119, 240);
+        this.context.lineTo(244, 240);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d212":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(114, 554);
+        this.context.lineTo(114, 399);
+
+        this.context.lineTo(114, 245);
+
+        this.context.lineTo(282, 245);
+        this.context.lineTo(282, 250);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d214":
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(610, 439);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(402, 195);
+
+        this.context.lineTo(402, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d216":        
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(610, 439);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(445, 195);
+
+        this.context.lineTo(445, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;      
+
+      case "d218":
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(610, 331);
+        this.context.moveTo(610, 420);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(493, 195);
+        this.context.lineTo(493, 205);
+
+        this.context.lineTo(492, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(596, 331);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d222":
+        this.context.moveTo(416,453);
+        this.context.lineTo(416,435);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d224":
+        this.context.moveTo(416,453);
+
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 435);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d226":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(337, 437);
+        this.context.lineTo(337, 522);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;      
+
+      case "d227":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d229":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+        
+        this.context.lineTo(220, 553);
+        this.context.lineTo(220, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d230":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 543);
+
+        this.context.lineTo(245, 543);
+        this.context.lineTo(119, 543);
+
+        this.context.lineTo(119, 522);
+        this.context.lineTo(120, 543);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d231":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(200, 553);
+        this.context.lineTo(200, 563);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d233":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(165, 553); 
+        this.context.lineTo(165, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d235a":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);    
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(126, 553); 
+        this.context.lineTo(126, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d237":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(88, 553); 
+        this.context.lineTo(88, 563);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d241":
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+
+        this.context.lineTo(610, 439);
+        this.context.lineTo(610, 343);
+
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.moveTo(610, 420);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d245":
+        this.context.moveTo(416,453);
+        this.context.lineTo(445,441);
+
+        this.context.lineTo(610, 441);
+
+        this.context.lineTo(610, 439);
+        this.context.lineTo(610, 343);
+
+        this.context.lineTo(610, 418);
+        // this.context.lineTo(641, 418);
+        // this.context.moveTo(610, 420);
+
+        //
+        // this.context.moveTo(369,157);
+        // this.context.lineTo(296, 157);
+        // this.context.lineTo(296, 195);
+        // this.context.lineTo(610, 195);
+        this.context.lineTo(610, 276);
+        this.context.lineTo(677, 276);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d284":
+        this.context.moveTo(416,453);
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(380, 441);
+
+        this.context.lineTo(380, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 522);
+
+        this.context.lineTo(351, 546);
+        this.context.lineTo(364, 546);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      default:
+        break;
+    }
+    this.context.stroke();
+  }
+
+  public drawPathFromStairCaseD_d(btnId: string) {
+    this.context.beginPath();
+    this.context.lineWidth = 5;
+    this.context.strokeStyle = "lime";
+    switch (btnId) {
+
+      case "emg":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.lineTo(641, 425);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "cb3f": 
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(493, 195);
+
+        this.context.lineTo(492, 195);
+        this.context.lineTo(610, 195);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(435, 195);
+
+        this.context.lineTo(435, 134);
+        this.context.lineTo(419, 134);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "eb2f":
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "wrs":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+
+        this.context.lineTo(282, 196);
+        this.context.lineTo(282, 245);   
+
+        this.context.lineTo(168, 245);   
+        this.context.lineTo(168, 257);   
+        this.context.lineTo(168, 245);   
+
+        this.context.lineTo(116, 245);   
+        this.context.lineTo(116, 335);   
+
+        this.context.lineTo(147, 335);   
+        this.context.lineTo(147, 338);   
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "elevator":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 459);
+
+      break;
+
+      case "d201":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+
+        this.context.lineTo(282, 196);
+
+        this.context.lineTo(282, 244);
+
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 423);
+        this.context.lineTo(112, 423);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d202":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(282, 196);
+
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+
+        this.context.lineTo(119, 461);
+        this.context.lineTo(122, 461);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d205":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+
+        this.context.lineTo(282, 196);
+
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 399);
+        this.context.lineTo(112, 399);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d206":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(282, 196);
+        this.context.lineTo(282, 244);
+
+        this.context.lineTo(196, 244);
+        this.context.moveTo(169, 400);        
+        this.context.lineTo(119, 399);
+        this.context.lineTo(119, 245);
+        this.context.lineTo(198, 245);
+
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d209a":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(282, 196);
+        
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(100, 244);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d209":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(282, 196);
+
+        this.context.lineTo(282, 244);
+        this.context.lineTo(119, 244);
+        this.context.lineTo(119, 279);
+        this.context.lineTo(91, 279);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d210":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(282, 196);
+        this.context.lineTo(282, 244);
+        
+        this.context.lineTo(119, 244);
+        this.context.lineTo(100, 244);
+        this.context.lineTo(100, 231);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d211":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(282, 196);
+        this.context.lineTo(282, 244);
+
+        this.context.lineTo(282, 244);
+
+        this.context.lineTo(119, 244);
+        this.context.lineTo(244, 244);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d212":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+
+        this.context.lineTo(282, 196);
+        this.context.lineTo(282, 250);        
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d214":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(402, 195);
+
+        this.context.lineTo(402, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;
+
+      case "d216":        
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(445, 195);
+
+        this.context.lineTo(445, 200);
+
+        this.drawDestinationRoomMarkerD(btnId);
+
+      break;      
+
+      case "d218":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 195);
+        this.context.lineTo(493, 195);
+        this.context.lineTo(493, 205);
+
+        this.context.lineTo(492, 195);
+        this.context.lineTo(610, 195);
+        this.context.lineTo(610, 331);
+
+        this.context.lineTo(596, 331);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d222":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(422, 441);
+        this.context.lineTo(422, 438);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d224":
+
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(380, 435);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d226":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(337, 437);
+        this.context.lineTo(337, 522);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;      
+
+      case "d227":
+
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d229":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 553);
+        
+        this.context.lineTo(220, 553);
+        this.context.lineTo(220, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d230":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+
+        this.context.lineTo(351, 543);
+
+        this.context.lineTo(245, 543);
+        this.context.lineTo(119, 543);
+
+        this.context.lineTo(119, 522);
+        this.context.lineTo(120, 543);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d231":
+
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(200, 553);
+        this.context.lineTo(200, 563);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d233":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(165, 553); 
+        this.context.lineTo(165, 563);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d235a":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+      
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+        
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(126, 553); 
+        this.context.lineTo(126, 563);
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d237":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+      
+        this.context.lineTo(610, 441);
+        this.context.lineTo(351, 441);
+
+        this.context.lineTo(351, 553);
+
+        this.context.lineTo(88, 553); 
+        this.context.lineTo(88, 563);
+        
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d241":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+        this.context.lineTo(610, 418);
+        this.context.lineTo(641, 418);
+        this.context.moveTo(610, 420);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d245":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,277);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      case "d284":
+        this.context.moveTo(750,198);
+        this.context.lineTo(672,198);        
+        this.context.lineTo(672,278);
+        this.context.lineTo(610,277);
+
+        this.context.lineTo(610, 441);
+        this.context.lineTo(380, 441);
+        this.context.lineTo(351, 441);
+        this.context.lineTo(351, 522);
+
+        this.context.lineTo(351, 546);
+        this.context.lineTo(364, 546);
+
+        this.drawDestinationRoomMarkerD(btnId);
+      break;
+
+      default:
+        break;
+    }
+    this.context.stroke();
+  }
+
+  public drawDestinationRoomMarkerD(btnId: String) {
+    switch (btnId) {
+      
+      case "emg":
+        this.context.drawImage(this.destinationMarker, 621, 425);
+      break;
+
+      case "wrs":
+        this.context.drawImage(this.destinationMarker, 145, 322);
+        this.context.drawImage(this.destinationMarker, 154, 257);
+      break;
+
+      case "cb3f":
+        this.context.drawImage(this.destinationMarker, 392, 117);
+      break;
+
+      case "eb2f":
+        this.context.drawImage(this.destinationMarker, 733, 190);
+      break;
+
+      case "d201":
+        this.context.drawImage(this.destinationMarker, 80, 395);
+      break;
+
+      case "d202":
+        this.context.drawImage(this.destinationMarker, 120, 435);
+      break;
+
+      case "d205":
+        this.context.drawImage(this.destinationMarker, 80, 374);
+      break;
+
+      case "d206":
+        this.context.drawImage(this.destinationMarker, 170, 374);
+        this.context.drawImage(this.destinationMarker, 182, 257);
+      break;
+
+      case "d212":
+        this.context.drawImage(this.destinationMarker, 282, 234);
+      break;
+
+      case "d209a":
+        this.context.drawImage(this.destinationMarker, 72, 214);
+      break;
+
+      case "d209":
+        this.context.drawImage(this.destinationMarker, 67, 250);
+      break;
+
+      case "d210":
+        this.context.drawImage(this.destinationMarker, 82, 195);
+      break;
+
+      case "d211":
+          this.context.drawImage(this.destinationMarker, 105, 198);
+          this.context.drawImage(this.destinationMarker, 227, 198);
+      break;
+
+      case "d230":
+        this.context.drawImage(this.destinationMarker, 120, 497);
+        this.context.drawImage(this.destinationMarker, 228, 497);
+        break;
+
+        
+      case "d235a":
+        this.context.drawImage(this.destinationMarker, 118, 570);
+        break;
+
+      case "d237":
+        this.context.drawImage(this.destinationMarker, 65, 570);
+        break;
+
+                
+      case "d233":
+        this.context.drawImage(this.destinationMarker, 145, 570);
+        break;
+
+      case "d231":
+        this.context.drawImage(this.destinationMarker, 183, 570);
+        break;
+
+      case "d229":
+        this.context.drawImage(this.destinationMarker, 218, 550);
+        break;
+
+      case "d227":
+        this.context.drawImage(this.destinationMarker, 325, 560);
+        break;
+
+      case "d222":
+        this.context.drawImage(this.destinationMarker, 403, 398);
+        break;
+
+      case "d224":
+        this.context.drawImage(this.destinationMarker, 365, 398);
+        break;
+
+      // case "elevator":
+      //   this.context.drawImage(this.destinationMarker, 365, 465);
+      // break;
+
+      case "d226":
+        this.context.drawImage(this.destinationMarker, 300, 498);
+        this.context.drawImage(this.destinationMarker, 300, 406);
+        break;
+
+      case "d284":
+        this.context.drawImage(this.destinationMarker, 363, 520);
+        break;
+      default:
+
+      case "d214":
+        this.context.drawImage(this.destinationMarker, 388, 208);
+        break;
+
+      case "d216":
+        this.context.drawImage(this.destinationMarker, 446, 192);
+        break;
+
+      case "d218":
+        this.context.drawImage(this.destinationMarker, 484, 204);
+        this.context.drawImage(this.destinationMarker, 563, 310);
+        break;
+
+      case "d226":
+        this.context.drawImage(this.destinationMarker, 325, 560);
+        break;
+      
+      case "d241":
+        this.context.drawImage(this.destinationMarker, 610, 310);
+        this.context.drawImage(this.destinationMarker, 638, 382);
+        break;
+
+      case "d245":
+        this.context.drawImage(this.destinationMarker, 676, 253);
+        break;  
+    }
+  }
+  // * D BUILDING END *
 }

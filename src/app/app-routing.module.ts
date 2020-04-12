@@ -12,6 +12,11 @@ const routes: Routes = [
     path: 'c-building-floor2',
     loadChildren: () => import('./c-building-floor2/c-building-floor2.module').then( m => m.CBuildingFloor2PageModule)
   },
+  {
+    path: 'd-building-floor2',
+    loadChildren: () => import('./d-building-floor2/d-building-floor2.module').then( m => m.DBuildingFloor2PageModule)
+  },
+
 ];
 
 @NgModule({
