@@ -3622,4 +3622,82 @@ export class DrawPathService {
     }
   }
   // * D BUILDING END *
+
+
+  // * C BUILDING START *
+
+  public drawCbuildingFloor2_OriginMarker(stairCaseId: string) {
+    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+    switch (stairCaseId) {
+      case "elevatorA":
+        this.context.drawImage(this.originMarker, 428, 495);
+        break;
+      case "elevatorB":
+        this.context.drawImage(this.originMarker, 205, 610);
+        break;
+      case "stairCaseA":
+        this.context.drawImage(this.originMarker, 547, 0);
+        break;
+      case "stairCaseB":
+        this.context.drawImage(this.originMarker, 396, 83);
+        break;
+      case "stairCaseC":
+        this.context.drawImage(this.originMarker, 130, 300);
+        break;
+      case "stairCaseD":
+        this.context.drawImage(this.originMarker, 197, 537);
+        break;
+      case "stairCaseE":
+        this.context.drawImage(this.originMarker, 203, 570);
+        break;
+      case "stairCaseF":
+        this.context.drawImage(this.originMarker, 390, 470);
+        break;
+      case "stairCaseG":
+        this.context.drawImage(this.originMarker, 651, 290);
+        break;
+      default:
+        break;
+    }
+  }
+
+  public drawPathFromElevatorA_C(btnId: string) {
+
+  }
+
+  public drawPathFromElevatorB_C(btnId: string) {
+
+  }
+
+  public drawPathFromStairCaseA_C(btnId: string) {
+
+  }
+
+  public drawPathFromStairCaseB_C(btnId: string) {
+    
+  }
+
+  public drawPathFromStairCaseC_C(btnId: string) {
+    
+  }
+
+  public drawPathFromStairCaseD_C(btnId: string) {
+    
+  }
+
+  public drawPathFromStairCaseE_C(btnId: string) {
+    
+  }
+
+  public drawPathFromStairCaseF_C(btnId: string) {
+    
+  }
+
+  public drawPathFromStairCaseG_C(btnId: string) {
+    
+  }
+  
+  public drawCbuildingFloor2_DestinationMarker(btnId: String) {
+
+  }
 }

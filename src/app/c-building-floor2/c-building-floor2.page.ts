@@ -37,7 +37,7 @@ export class CBuildingFloor2Page implements OnInit {
   private sendStairCaseId(event) {
     this.roomsPicker();
     this.stairCase = event.target.id;
-    //this.dps.drawCbuildingFloor2_OriginMarker(this.stairCase);
+    this.dps.drawCbuildingFloor2_OriginMarker(this.stairCase);
   }
 
   async roomsPicker() {
@@ -61,8 +61,30 @@ export class CBuildingFloor2Page implements OnInit {
           name: "rooms",
           options: [
             { text: "--- Please Select ---", value: "null" },
-            { text: "Information Center", value: "ifc" },
-            { text: "Security", value: "sec" },
+            { text: "C201", value: "c201" },
+            { text: "C210", value: "c210" },
+            { text: "C211", value: "c211" },
+            { text: "C212", value: "c212" },
+            { text: "C213", value: "c213" },
+            { text: "C214", value: "c214" },
+            { text: "C221", value: "c221" },
+            { text: "C227", value: "c227" },
+            { text: "C230", value: "c230" },
+            { text: "C234", value: "c234" },
+            { text: "C235", value: "c235" },
+            { text: "C236", value: "c236" },
+            { text: "C241", value: "c241" },
+            { text: "C243", value: "c243" },
+            { text: "C243A", value: "c243A" },
+            { text: "C243B", value: "c243B" },
+            { text: "C246", value: "c246" },
+            { text: "C247", value: "c247" },
+            { text: "C250", value: "c250" },
+            { text: "C255", value: "c255" },
+            { text: "C256", value: "c256" },
+            { text: "Grill + CO", value: "grill+co" },
+            { text: "Pizza Pizza", value: "pizzapizza" },
+            { text: "Tim Hortons", value: "timhortons" },
             { text: "Washrooms", value: "wrs" },
           ]
         }
@@ -78,6 +100,33 @@ export class CBuildingFloor2Page implements OnInit {
           this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
         }
         switch (this.stairCase) {
+          case "elevatorA":
+            this.dps.drawPathFromElevatorA_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "elevatorB":
+            this.dps.drawPathFromElevatorB_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseA":
+            this.dps.drawPathFromStairCaseA_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseB":
+            this.dps.drawPathFromStairCaseB_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseC":
+            this.dps.drawPathFromStairCaseC_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseD":
+            this.dps.drawPathFromStairCaseD_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseE":
+            this.dps.drawPathFromStairCaseE_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseF":
+            this.dps.drawPathFromStairCaseF_C(rooms.options[rooms.selectedIndex].value);
+            break;
+          case "stairCaseG":
+            this.dps.drawPathFromStairCaseG_C(rooms.options[rooms.selectedIndex].value);
+            break;
           default:
             break;
         }

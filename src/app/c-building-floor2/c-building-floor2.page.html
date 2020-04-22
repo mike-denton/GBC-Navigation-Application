@@ -22,12 +22,76 @@
 
       <map name="cBuildingFloor2-map" id="map_id" #areaMap>
         <area
-        alt="entrance"
-        id="entrance"
-        title="entrance"
+        alt="elevatorA"
+        id="elevatorA"
+        title="elevator A"
         (click)="sendStairCaseId($event)"
-        coords="668,203,720,227,643,272,628,226"
-        shape="poly"
+        coords="435,516,453,532"
+        shape="rect"
+        />
+        <area
+        alt="elevatorB"
+        id="elevatorB"
+        title="elevator B"
+        (click)="sendStairCaseId($event)"
+        coords="213,633,230,650"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseA"
+        id="stairCaseA"
+        title="stairCase A"
+        (click)="sendStairCaseId($event)"
+        coords="551,2,574,32"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseB"
+        id="stairCaseB"
+        title="stairCase B"
+        (click)="sendStairCaseId($event)"
+        coords="400,80,424,114"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseC"
+        id="stairCaseC"
+        title="stairCase C"
+        (click)="sendStairCaseId($event)"
+        coords="135,310,158,333"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseD"
+        id="stairCaseD"
+        title="stairCase D"
+        (click)="sendStairCaseId($event)"
+        coords="203,555,229,574"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseE"
+        id="stairCaseE"
+        title="stairCase E"
+        (click)="sendStairCaseId($event)"
+        coords="206,575,233,606"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseF"
+        id="stairCaseF"
+        title="stairCase F"
+        (click)="sendStairCaseId($event)"
+        coords="384,477,434,505"
+        shape="rect"
+        />
+        <area
+        alt="stairCaseG"
+        id="stairCaseG"
+        title="stairCase G"
+        (click)="sendStairCaseId($event)"
+        coords="651,288,681,327"
+        shape="rect"
         />
       </map>
       <canvas id="mapCanvas" #canvasEl width="839" height="651"></canvas>
