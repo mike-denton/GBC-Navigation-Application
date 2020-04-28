@@ -4,7 +4,6 @@ import { PickerOptions } from '@ionic/core';
 import { DrawPathService} from '../draw-path.service'
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -23,15 +22,16 @@ export class HomePage {
   constructor(private pickerCtrl: PickerController,
     private renderer: Renderer2, 
     private drawPathService: DrawPathService,
-    private router: Router) {}
+    private router: Router) {
+    }
 
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext('2d');
-    this.dps.drawParkingMarkers();
+    this.fromParkingsPicker();
   }
 
   private sendParkingId(event){
-    this.buildingsPicker();
+    this.buildingsPicker(this.parking)
     this.parking = event.target.id;
     this.dps.drawOriginMarker(this.parking);
   }
@@ -53,7 +53,10 @@ export class HomePage {
     }
   }
  
-  async buildingsPicker(){
+  async buildingsPicker(parking){
+
+    this.parking = parking;
+
     let pickerAction;
     let buildings: PickerOptions = {
       buttons: [
@@ -252,6 +255,75 @@ export class HomePage {
             break;
         }
       }else{
+      }
+    });
+  }
+
+  async fromParkingsPicker(){
+    let pickerAction;
+    let parkings: PickerOptions = {
+      buttons: [
+        {
+          text: 'Done',
+          role: 'done',
+          handler: value => {
+            pickerAction = 'done';
+          }
+        }
+      ],
+      columns: [
+        {
+          name: 'parkings',
+          selectedIndex: -1,
+          options: [
+            { text: '--- From which parking lot? ---', value: 'null'},
+            { text: 'Parking A', value: 'parkingA' },
+            { text: 'Parking B', value: 'parkingB' },
+            { text: 'Parking C', value: 'parkingC' },
+            { text: 'Parking D', value: 'parkingD' },
+            { text: 'Parking F', value: 'parkingF' }
+          ]
+        }
+      ]
+    };    
+
+    let picker = await this.pickerCtrl.create(parkings);
+    picker.present();
+    picker.onDidDismiss().then(async data => {
+      let col = await picker.getColumn('parkings');
+      if (pickerAction == 'done') {
+        switch (col.options[col.selectedIndex].value){
+
+          case 'parkingA':
+            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
+            this.buildingsPicker(col.options[col.selectedIndex].value);
+            break;
+
+          case 'parkingB':
+            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
+            this.buildingsPicker(col.options[col.selectedIndex].value);
+            break;
+
+          case 'parkingC':
+            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
+            this.buildingsPicker(col.options[col.selectedIndex].value);
+            break;
+
+          case 'parkingD':
+            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
+            this.buildingsPicker(col.options[col.selectedIndex].value);
+            break;
+
+          case 'parkingF':
+            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
+            this.buildingsPicker(col.options[col.selectedIndex].value);
+            break;
+
+          default:
+            break;
+        }
+      }else{
+        this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
       }
     });
   }

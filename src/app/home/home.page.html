@@ -9,8 +9,8 @@
 <ion-content>
   <div class="ion-padding">
     <div id="container">
-      <img #image class='img' draggable="false" src="assets/images/campusmap.png" alt="exterior campus map" usemap="#exterior-map" />
-      <map name="exterior-map">
+      <img id="floor" #image class='img' draggable="false" src="assets/images/campusmap.png" alt="exterior campus map" usemap="#exterior-map" />
+      <map name="exterior-map" >
         <!-- Parkings Area -->
         <area alt="parkingA" id="parkingA" title="parking A" (click)="sendParkingId($event)" coords="272,279,394,304" shape="rect">
         <area alt="parkingB" id="parkingB" title="parking B" (click)="sendParkingId($event)" coords="328,174,295,151" shape="rect">
