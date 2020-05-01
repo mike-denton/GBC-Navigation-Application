@@ -17,6 +17,15 @@ export class DrawPathService {
 
   // Parking Markers Main Page
   // * MAIN PAGE START *
+
+  public display_All_Parking_Origins(){
+      this.context.drawImage(this.originMarker, 315, 260);  
+      this.context.drawImage(this.originMarker, 295, 132); 
+      this.context.drawImage(this.originMarker, 121, 138); 
+      this.context.drawImage(this.originMarker, 160, 243); 
+      this.context.drawImage(this.originMarker, 295, 173); 
+  }
+
   public drawParkingMarkers(parkingId: String) {
       // this.originMarker.onload = () => {
       //   this.context.drawImage(this.originMarker, 315, 260);  
@@ -26,6 +35,7 @@ export class DrawPathService {
       //   this.context.drawImage(this.originMarker, 295, 173); 
       // }
 
+      this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
       switch(parkingId){
         case "parkingA":
           this.context.drawImage(this.originMarker, 315, 260);  
@@ -419,6 +429,17 @@ export class DrawPathService {
   // * MAIN PAGE END *
 
   // * E BUILDING START *
+  public display_All_Ebuilding_Origins() {
+      this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+      this.context.drawImage(this.originMarker, 655, 205);
+      this.context.drawImage(this.originMarker, 529, 60);
+      this.context.drawImage(this.originMarker, 440, 55);
+      this.context.drawImage(this.originMarker, 440, 128);
+      this.context.drawImage(this.originMarker, 155, 455);
+      this.context.drawImage(this.originMarker, 183, 495);
+      this.context.drawImage(this.originMarker, 653, 380);
+  }
+  
   public drawEbuildingFloor2_OriginMarker(stairCaseId: string) {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     switch (stairCaseId) {
@@ -1935,6 +1956,16 @@ export class DrawPathService {
   // * E BUILDING END *
 
   // * D BUILDING START *
+  public display_All_Dbuilding_Origin(){
+      this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+
+      this.context.drawImage(this.originMarker, 35, 540);
+      this.context.drawImage(this.originMarker, 373, 130);
+      this.context.drawImage(this.originMarker, 403, 454);
+      this.context.drawImage(this.originMarker, 733, 200);
+      this.context.drawImage(this.originMarker, 360, 438);
+  }
+
   public drawDbuildingFloor2_OriginMarker(stairCaseId: string) {
     switch (stairCaseId) {
       case "entrance":
@@ -4232,6 +4263,19 @@ export class DrawPathService {
 
 
   // * C BUILDING START *
+  public display_All_Cbuilding_Origin(){
+    this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
+
+    this.context.drawImage(this.originMarker, 428, 495);
+    this.context.drawImage(this.originMarker, 205, 610);
+    this.context.drawImage(this.originMarker, 547, 0);
+    this.context.drawImage(this.originMarker, 396, 83);
+    this.context.drawImage(this.originMarker, 130, 300);
+    this.context.drawImage(this.originMarker, 197, 537);
+    this.context.drawImage(this.originMarker, 203, 570);
+    this.context.drawImage(this.originMarker, 390, 470);
+    this.context.drawImage(this.originMarker, 651, 290);
+  }
 
   public drawCbuildingFloor2_OriginMarker(stairCaseId: string) {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);

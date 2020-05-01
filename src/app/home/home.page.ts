@@ -36,6 +36,10 @@ export class HomePage {
     this.dps.drawOriginMarker(this.parking);
   }
 
+  private displayAllOriginPoints(){
+    this.dps.display_All_Parking_Origins();
+  }
+
   private sendBuildingId(event){
     this.building = event.target.id;
     switch (this.building){
@@ -232,15 +236,16 @@ export class HomePage {
           selectedIndex: -1,
           options: [
             { text: '--- Please Select ---', value: 'null'},
-            { text: 'Basement', value:'basement' },
+            { text: 'Basement',  value:'basement' },
             { text: '1st Floor', value: 'floor1' },
             { text: '2nd Floor', value: 'floor2' },
             { text: '3rd Floor', value: 'floor3' },
             { text: '4th Floor', value: 'floor4' }
-          ]
+          ]          
         }
-      ]
+      ]      
     };
+
 
     let picker = await this.pickerCtrl.create(floors);
     picker.present();
@@ -257,6 +262,15 @@ export class HomePage {
       }else{
       }
     });
+
+    // test
+    function disableColumn(){
+      console.log(floors.columns.values().next()) // shows option values in picker
+      // floors.cssClass = ""
+
+    }
+    disableColumn();
+
   }
 
   async fromParkingsPicker(){
@@ -282,7 +296,7 @@ export class HomePage {
             { text: 'Parking C', value: 'parkingC' },
             { text: 'Parking D', value: 'parkingD' },
             { text: 'Parking F', value: 'parkingF' }
-          ]
+          ]          
         }
       ]
     };    
@@ -326,5 +340,6 @@ export class HomePage {
         this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
       }
     });
+
   }
 }

@@ -1,6 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> <p id="coords">co-ordinates</p></ion-title>
+    <ion-title> D Building</ion-title>
+
+    <ion-button size='medium' color='primary' slot='end' (click)="fromStaircases()">List of Origins</ion-button>
+
+    <ion-button size='medium' color='tertiary' slot='end' (click)="displayAllOriginPoints()">
+      Display all Origins &nbsp;
+      <ion-icon name="locate"></ion-icon>    
+    </ion-button>
+    
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +25,6 @@
         src="assets/images/dBuildingFloor2.png"
         alt="D Building Second Floor"
         usemap="#dBuildingFloor2-map"
-        (load)="handleMouseMove();handleMapResize()"
       />
 
       <map name="dBuildingFloor2-map" id="map_id" #areaMap>
