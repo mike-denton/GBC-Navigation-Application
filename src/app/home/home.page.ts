@@ -40,6 +40,10 @@ export class HomePage {
     this.dps.display_All_Parking_Origins();
   }
 
+  private func_disable(){
+    console.log('hnererer')
+  }
+
   private sendBuildingId(event){
     this.building = event.target.id;
     switch (this.building){
@@ -122,6 +126,8 @@ export class HomePage {
     });
   }
 
+
+
   async cBuildingFloorsPicker(){
     let pickerAction;
     let floors: PickerOptions = {
@@ -155,6 +161,16 @@ export class HomePage {
 
     let picker = await this.pickerCtrl.create(floors);
     picker.present();
+    setTimeout(function() { 
+      document.getElementsByTagName("button")[3].disabled=true
+      document.getElementsByTagName("button")[5].disabled=true
+      document.getElementsByTagName("button")[6].disabled=true
+      document.getElementsByTagName("button")[7].disabled=true
+      document.getElementsByTagName("button")[3].style.color='grey'
+      document.getElementsByTagName("button")[5].style.color='grey'
+      document.getElementsByTagName("button")[6].style.color='grey'
+      document.getElementsByTagName("button")[7].style.color='grey'
+    }, 0);
     picker.onDidDismiss().then(async data => {
       let col = await picker.getColumn('floors');
       if (pickerAction == 'done') {
@@ -163,8 +179,9 @@ export class HomePage {
             this.router.navigate(['/c-building-floor2'])
             break;
           default:
+            this.cBuildingFloorsPicker();
             break;
-        }
+          }
       }else{
       }
     });
@@ -191,7 +208,10 @@ export class HomePage {
           name: 'floors',
           options: [
             { text: '--- Please Select ---', value: 'null'},
-            { text: '2nd Floor', value: 'floor2' }
+            { text: '1st Floor', value: 'floor1' },
+            { text: '2nd Floor', value: 'floor2' },
+            { text: '3rd Floor', value: 'floor3' },
+            { text: '4th Floor', value: 'floor4' },
           ]
         }
       ]
@@ -199,6 +219,14 @@ export class HomePage {
 
     let picker = await this.pickerCtrl.create(floors);
     picker.present();
+    setTimeout(function() { 
+      document.getElementsByTagName("button")[3].disabled=true
+      document.getElementsByTagName("button")[5].disabled=true
+      document.getElementsByTagName("button")[6].disabled=true
+      document.getElementsByTagName("button")[3].style.color='grey'
+      document.getElementsByTagName("button")[5].style.color='grey'
+      document.getElementsByTagName("button")[6].style.color='grey'
+    }, 0);
     picker.onDidDismiss().then(async data => {
       let col = await picker.getColumn('floors');
       if (pickerAction == 'done') {
@@ -207,6 +235,7 @@ export class HomePage {
             this.router.navigate(['/d-building-floor2'])
             break;
           default:
+            this.dBuildingFloorsPicker();
             break;
         }
       }else{
@@ -249,6 +278,16 @@ export class HomePage {
 
     let picker = await this.pickerCtrl.create(floors);
     picker.present();
+    setTimeout(function() { 
+      document.getElementsByTagName("button")[3].disabled=true
+      document.getElementsByTagName("button")[4].disabled=true
+      document.getElementsByTagName("button")[6].disabled=true
+      document.getElementsByTagName("button")[7].disabled=true
+      document.getElementsByTagName("button")[3].style.color='grey'
+      document.getElementsByTagName("button")[4].style.color='grey'
+      document.getElementsByTagName("button")[6].style.color='grey'
+      document.getElementsByTagName("button")[7].style.color='grey'
+    }, 0);
     picker.onDidDismiss().then(async data => {
       let col = await picker.getColumn('floors');
       if (pickerAction == 'done') {
@@ -257,20 +296,12 @@ export class HomePage {
             this.router.navigate(['/e-building-floor2'])
             break;
           default:
+            this.eBuildingFloorsPicker();
             break;
         }
       }else{
       }
     });
-
-    // test
-    function disableColumn(){
-      console.log(floors.columns.values().next()) // shows option values in picker
-      // floors.cssClass = ""
-
-    }
-    disableColumn();
-
   }
 
   async fromParkingsPicker(){

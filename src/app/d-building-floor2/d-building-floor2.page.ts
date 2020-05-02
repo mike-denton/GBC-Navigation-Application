@@ -213,14 +213,14 @@ export class DBuildingFloor2Page implements OnInit {
   }
 
   // builds a co-ordinate list and display on screen ** debugging
-  public handleMouseMove() {
-    var img = document.getElementById("floor");
-    var coords = document.getElementById("coords");
-    img.addEventListener("mousemove", function(event) {
-      console.log("mouse move");
-      coords.innerHTML = "x: " + event.offsetX + " y: " + event.offsetY;
-    });
-  }
+  // public handleMouseMove() {
+  //   var img = document.getElementById("floor");
+  //   var coords = document.getElementById("coords");
+  //   img.addEventListener("mousemove", function(event) {
+  //     console.log("mouse move");
+  //     coords.innerHTML = "x: " + event.offsetX + " y: " + event.offsetY;
+  //   });
+  // }
   // onload, scales the map area cor-ordinates based on screen width
   public handleMapResize() {
     var ImageMap = function(map) {
