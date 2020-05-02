@@ -211,7 +211,6 @@ export class HomePage {
             { text: '1st Floor', value: 'floor1' },
             { text: '2nd Floor', value: 'floor2' },
             { text: '3rd Floor', value: 'floor3' },
-            { text: '4th Floor', value: 'floor4' },
           ]
         }
       ]
@@ -222,10 +221,8 @@ export class HomePage {
     setTimeout(function() { 
       document.getElementsByTagName("button")[3].disabled=true
       document.getElementsByTagName("button")[5].disabled=true
-      document.getElementsByTagName("button")[6].disabled=true
       document.getElementsByTagName("button")[3].style.color='grey'
       document.getElementsByTagName("button")[5].style.color='grey'
-      document.getElementsByTagName("button")[6].style.color='grey'
     }, 0);
     picker.onDidDismiss().then(async data => {
       let col = await picker.getColumn('floors');
