@@ -157,15 +157,15 @@ export class CBuildingFloor2Page implements OnInit {
           name: "staircases_elevators",
           options: [
             { text: "--- From which staircases or elevators? ---", value: "null" },
-            { text: "Staircase A", value: "stairCaseA" },
-            { text: "Staircase B", value: "stairCaseB" },
-            { text: "Staircase C", value: "stairCaseC" },
-            { text: "Staircase D", value: "stairCaseD" },
-            { text: "Staircase E", value: "stairCaseE" },
-            { text: "Staircase F", value: "stairCaseF" },
-            { text: "Staircase G", value: "stairCaseG" },
-            { text: "Elevator A", value: "elevatorA" },
-            { text: "Elevator B", value: "elevatorB" },
+            { text: "Staircase A (SA)", value: "stairCaseA" },
+            { text: "Staircase B (SB)", value: "stairCaseB" },
+            { text: "Staircase C (SC)", value: "stairCaseC" },
+            { text: "Staircase D (SD)", value: "stairCaseD" },
+            { text: "Staircase E (SE)", value: "stairCaseE" },
+            { text: "Staircase F (SF)", value: "stairCaseF" },
+            { text: "Staircase G (SG)", value: "stairCaseG" },
+            { text: "Elevator A (EA)", value: "elevatorA" },
+            { text: "Elevator B (EB)", value: "elevatorB" },
           ]
         }
       ]

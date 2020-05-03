@@ -161,12 +161,12 @@ export class EBuildingFloor2Page implements OnInit {
 
             { text: "--- From which staircases or elevator? ---", value: "null" },
             { text: "Front Entrance", value: "entrance" },
-            { text: "Staircase A", value: "stairCaseA" },
-            { text: "Staircase B", value: "stairCaseB" },
-            { text: "Staircase C", value: "stairCaseC" },
-            { text: "Staircase D", value: "stairCaseD" },
-            { text: "Staircase E", value: "stairCaseE" },
-            { text: "Elevator", value: "elevator" },
+            { text: "Staircase A (SA)", value: "stairCaseA" },
+            { text: "Staircase B (SB)", value: "stairCaseB" },
+            { text: "Staircase C (SC)", value: "stairCaseC" },
+            { text: "Staircase D (SD)", value: "stairCaseD" },
+            { text: "Staircase E (SE)", value: "stairCaseE" },
+            { text: "Elevator (EA)", value: "elevator" },
           ]
         }
       ]
