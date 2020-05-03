@@ -20,10 +20,7 @@ export class DrawPathService {
 
   public display_All_Parking_Origins(){
       this.context.drawImage(this.originMarker, 315, 260);  
-      this.context.drawImage(this.originMarker, 295, 132); 
-      this.context.drawImage(this.originMarker, 121, 138); 
       this.context.drawImage(this.originMarker, 160, 243); 
-      this.context.drawImage(this.originMarker, 295, 173); 
   }
 
   public drawParkingMarkers(parkingId: String) {
@@ -42,19 +39,7 @@ export class DrawPathService {
           break;
 
         case "parkingB":
-          this.context.drawImage(this.originMarker, 295, 132); 
-          break;
-
-        case "parkingC":
-          this.context.drawImage(this.originMarker, 121, 138); 
-          break;
-
-        case "parkingD":
           this.context.drawImage(this.originMarker, 160, 243); 
-          break;
-
-        case "parkingF":
-          this.context.drawImage(this.originMarker, 295, 173); 
           break;
 
         default:
@@ -65,21 +50,15 @@ export class DrawPathService {
   public drawOriginMarker(parkingId: String) {
     this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
     switch (parkingId) {
+
       case "parkingA":
         this.context.drawImage(this.originMarker, 315, 260);
         break;
+
       case "parkingB":
-        this.context.drawImage(this.originMarker, 295, 132);
-        break;
-      case "parkingC":
-        this.context.drawImage(this.originMarker, 121, 138);
-        break;
-      case "parkingD":
         this.context.drawImage(this.originMarker, 160, 243);
         break;
-      case "parkingF":
-        this.context.drawImage(this.originMarker, 295, 173);
-        break;
+
       default:
         break;
     }
@@ -153,13 +132,6 @@ export class DrawPathService {
     this.context.strokeStyle = "lime";
     switch (btnId) {
       case "buildingC":
-        // this.context.moveTo(281, 135);
-        // this.context.lineTo(281, 165);
-        // this.context.moveTo(278, 164);
-        // this.context.lineTo(310, 164);
-        // this.context.moveTo(280, 139);
-        // this.context.lineTo(228, 139);
-
         this.context.moveTo(278, 164);
         this.context.lineTo(310, 164);
         this.context.moveTo(281, 165);

@@ -106,16 +106,7 @@ export class HomePage {
             this.dps.drawPathFromParkingA(col.options[col.selectedIndex].value);
             break;
           case 'parkingB':
-            this.dps.drawPathFromParkingB(col.options[col.selectedIndex].value);
-            break;
-          case 'parkingC':
-            this.dps.drawPathFromParkingC(col.options[col.selectedIndex].value);
-            break;
-          case 'parkingD':
             this.dps.drawPathFromParkingD(col.options[col.selectedIndex].value);
-            break;
-          case 'parkingF':
-            this.dps.drawPathFromParkingF(col.options[col.selectedIndex].value);
             break;
           default:
             break;
@@ -125,8 +116,6 @@ export class HomePage {
       }
     });
   }
-
-
 
   async cBuildingFloorsPicker(){
     let pickerAction;
@@ -319,11 +308,8 @@ export class HomePage {
           selectedIndex: -1,
           options: [
             { text: '--- From which parking lot? ---', value: 'null'},
-            { text: 'Parking A', value: 'parkingA' },
-            { text: 'Parking B', value: 'parkingB' },
-            { text: 'Parking C', value: 'parkingC' },
-            { text: 'Parking D', value: 'parkingD' },
-            { text: 'Parking F', value: 'parkingF' }
+            { text: 'Parking A (PA)', value: 'parkingA' },
+            { text: 'Parking B (PB)', value: 'parkingB' },
           ]          
         }
       ]
@@ -342,21 +328,6 @@ export class HomePage {
             break;
 
           case 'parkingB':
-            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
-            this.buildingsPicker(col.options[col.selectedIndex].value);
-            break;
-
-          case 'parkingC':
-            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
-            this.buildingsPicker(col.options[col.selectedIndex].value);
-            break;
-
-          case 'parkingD':
-            this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
-            this.buildingsPicker(col.options[col.selectedIndex].value);
-            break;
-
-          case 'parkingF':
             this.dps.drawParkingMarkers(col.options[col.selectedIndex].value);
             this.buildingsPicker(col.options[col.selectedIndex].value);
             break;

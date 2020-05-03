@@ -157,11 +157,11 @@ export class DBuildingFloor2Page implements OnInit {
           name: "staircase_elevator",
           options: [
             { text: "--- From which staircases or elevator? ---", value: "null" },
-            { text: "Staircase A", value: "stairCaseD" },
-            { text: "Staircase B", value: "stairCaseD_b" },
-            { text: "Staircase C", value: "stairCaseD_c" },
-            { text: "Staircase D", value: "stairCaseD_d" },
-            { text: "Elevator",    value: "elevator_a" }
+            { text: "Staircase A (SA)", value: "stairCaseD" },
+            { text: "Staircase B (SB)", value: "stairCaseD_b" },
+            { text: "Staircase C (SC)", value: "stairCaseD_c" },
+            { text: "Staircase D (SD)", value: "stairCaseD_d" },
+            { text: "Elevator (EA)",    value: "elevator_a" }
           ]
         }
       ]
