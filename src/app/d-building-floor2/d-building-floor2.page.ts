@@ -1,21 +1,20 @@
-import { 
+import {
   Component,
-  OnInit,   
+  OnInit,
   ViewChild,
   ElementRef,
-  Renderer2 
-} from '@angular/core';
+  Renderer2,
+} from "@angular/core";
 import { DrawPathService } from "../draw-path.service";
 import { PickerController } from "@ionic/angular";
 import { PickerOptions } from "@ionic/core";
 
 @Component({
-  selector: 'app-d-building-floor2',
-  templateUrl: './d-building-floor2.page.html',
-  styleUrls: ['./d-building-floor2.page.scss'],
+  selector: "app-d-building-floor2",
+  templateUrl: "./d-building-floor2.page.html",
+  styleUrls: ["./d-building-floor2.page.scss"],
 })
 export class DBuildingFloor2Page implements OnInit {
-
   private originMarker = new Image();
 
   @ViewChild("canvasEl", { static: true }) canvasEl: ElementRef;
@@ -31,8 +30,9 @@ export class DBuildingFloor2Page implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dps.context = (this.canvasEl.nativeElement as HTMLCanvasElement).getContext("2d");
-    this.fromStaircases();    
+    this.dps.context = (this.canvasEl
+      .nativeElement as HTMLCanvasElement).getContext("2d");
+    this.fromStaircases();
   }
 
   private sendStairCaseId(event) {
@@ -41,25 +41,25 @@ export class DBuildingFloor2Page implements OnInit {
     this.dps.drawDbuildingFloor2_OriginMarker(this.stairCase);
   }
 
-  private displayAllOriginPoints(){
+  private displayAllOriginPoints() {
     this.dps.display_All_Dbuilding_Origin();
-  } 
+  }
 
-  async roomsPicker(staircase_elevator:String) {
+  async roomsPicker(staircase_elevator: String) {
     let pickerAction;
     let stairsRooms: PickerOptions = {
       buttons: [
         {
           text: "Cancel",
-          role: "cancel"
+          role: "cancel",
         },
         {
           text: "Done",
           role: "done",
-          handler: value => {
+          handler: (value) => {
             pickerAction = "done";
-          }
-        }
+          },
+        },
       ],
       columns: [
         {
@@ -95,47 +95,66 @@ export class DBuildingFloor2Page implements OnInit {
             { text: "C Building 3rd Floor", value: "cb3f" },
             { text: "E Building 2nd Floor", value: "eb2f" },
             { text: "Washrooms", value: "wrs" },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     };
 
     let picker = await this.pickerCtrl.create(stairsRooms);
     picker.present();
-    picker.onDidDismiss().then(async data => {
+    picker.onDidDismiss().then(async (data) => {
       let rooms = await picker.getColumn("rooms");
       if (pickerAction == "done") {
         if (staircase_elevator == "null") {
-          this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
+          this.dps.context.clearRect(
+            0,
+            0,
+            this.dps.context.canvas.width,
+            this.dps.context.canvas.height
+          );
         }
-        console.log(staircase_elevator)
+        console.log(staircase_elevator);
         switch (staircase_elevator) {
-
           case "stairCaseD":
-            this.dps.drawPathFromStairCaseD_x(rooms.options[rooms.selectedIndex].value);
+            this.dps.drawPathFromStairCaseD_x(
+              rooms.options[rooms.selectedIndex].value
+            );
             break;
 
           case "stairCaseD_b":
-            this.dps.drawPathFromStairCaseD_b(rooms.options[rooms.selectedIndex].value);
+            this.dps.drawPathFromStairCaseD_b(
+              rooms.options[rooms.selectedIndex].value
+            );
             break;
-          
+
           case "stairCaseD_c":
-            this.dps.drawPathFromStairCaseD_c(rooms.options[rooms.selectedIndex].value);
+            this.dps.drawPathFromStairCaseD_c(
+              rooms.options[rooms.selectedIndex].value
+            );
             break;
 
           case "stairCaseD_d":
-            this.dps.drawPathFromStairCaseD_d(rooms.options[rooms.selectedIndex].value);
+            this.dps.drawPathFromStairCaseD_d(
+              rooms.options[rooms.selectedIndex].value
+            );
             break;
 
           case "elevator_a":
-            this.dps.drawPathFromElevator_a(rooms.options[rooms.selectedIndex].value);
+            this.dps.drawPathFromElevator_a(
+              rooms.options[rooms.selectedIndex].value
+            );
             break;
-           
+
           default:
             break;
         }
       } else {
-        this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
+        this.dps.context.clearRect(
+          0,
+          0,
+          this.dps.context.canvas.width,
+          this.dps.context.canvas.height
+        );
       }
     });
   }
@@ -147,111 +166,107 @@ export class DBuildingFloor2Page implements OnInit {
         {
           text: "Done",
           role: "done",
-          handler: value => {
+          handler: (value) => {
             pickerAction = "done";
-          }
-        }
+          },
+        },
       ],
       columns: [
         {
           name: "staircase_elevator",
           options: [
-            { text: "--- From which staircases or elevator? ---", value: "null" },
+            {
+              text: "--- From which staircases or elevator? ---",
+              value: "null",
+            },
             { text: "Staircase A (SA)", value: "stairCaseD" },
             { text: "Staircase B (SB)", value: "stairCaseD_b" },
             { text: "Staircase C (SC)", value: "stairCaseD_c" },
             { text: "Staircase D (SD)", value: "stairCaseD_d" },
-            { text: "Elevator (EA)",    value: "elevator_a" }
-          ]
-        }
-      ]
+            { text: "Elevator (EA)", value: "elevator_a" },
+          ],
+        },
+      ],
     };
 
     let picker = await this.pickerCtrl.create(staircase_elevator);
     picker.present();
-    picker.onDidDismiss().then(async data => {
+    picker.onDidDismiss().then(async (data) => {
       let staircase_elevator = await picker.getColumn("staircase_elevator");
       if (pickerAction == "done") {
-        if (staircase_elevator.options[staircase_elevator.selectedIndex].value == "null") {
-          this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
+        if (
+          staircase_elevator.options[staircase_elevator.selectedIndex].value ==
+          "null"
+        ) {
+          this.dps.context.clearRect(
+            0,
+            0,
+            this.dps.context.canvas.width,
+            this.dps.context.canvas.height
+          );
         }
-        console.log(staircase_elevator.options[staircase_elevator.selectedIndex].value)
-        switch (staircase_elevator.options[staircase_elevator.selectedIndex].value ) {
-
+        console.log(
+          staircase_elevator.options[staircase_elevator.selectedIndex].value
+        );
+        switch (
+          staircase_elevator.options[staircase_elevator.selectedIndex].value
+        ) {
           case "stairCaseD":
-            this.dps.drawDbuildingFloor2_OriginMarker(staircase_elevator.options[staircase_elevator.selectedIndex].value );
-            this.roomsPicker(staircase_elevator.options[staircase_elevator.selectedIndex].value )
+            this.dps.drawDbuildingFloor2_OriginMarker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
+            this.roomsPicker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
             break;
 
           case "stairCaseD_b":
-            this.dps.drawDbuildingFloor2_OriginMarker(staircase_elevator.options[staircase_elevator.selectedIndex].value );
-            this.roomsPicker(staircase_elevator.options[staircase_elevator.selectedIndex].value )
+            this.dps.drawDbuildingFloor2_OriginMarker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
+            this.roomsPicker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
             break;
-          
+
           case "stairCaseD_c":
-            this.dps.drawDbuildingFloor2_OriginMarker(staircase_elevator.options[staircase_elevator.selectedIndex].value );
-            this.roomsPicker(staircase_elevator.options[staircase_elevator.selectedIndex].value )
+            this.dps.drawDbuildingFloor2_OriginMarker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
+            this.roomsPicker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
             break;
 
           case "stairCaseD_d":
-            this.dps.drawDbuildingFloor2_OriginMarker(staircase_elevator.options[staircase_elevator.selectedIndex].value );
-            this.roomsPicker(staircase_elevator.options[staircase_elevator.selectedIndex].value )
+            this.dps.drawDbuildingFloor2_OriginMarker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
+            this.roomsPicker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
             break;
 
           case "elevator_a":
-            this.dps.drawDbuildingFloor2_OriginMarker(staircase_elevator.options[staircase_elevator.selectedIndex].value );
-            this.roomsPicker(staircase_elevator.options[staircase_elevator.selectedIndex].value )
+            this.dps.drawDbuildingFloor2_OriginMarker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
+            this.roomsPicker(
+              staircase_elevator.options[staircase_elevator.selectedIndex].value
+            );
             break;
-           
+
           default:
             break;
         }
       } else {
-        this.dps.context.clearRect(0, 0, this.dps.context.canvas.width, this.dps.context.canvas.height);
+        this.dps.context.clearRect(
+          0,
+          0,
+          this.dps.context.canvas.width,
+          this.dps.context.canvas.height
+        );
       }
     });
-  }
-
-  // builds a co-ordinate list and display on screen ** debugging
-  // public handleMouseMove() {
-  //   var img = document.getElementById("floor");
-  //   var coords = document.getElementById("coords");
-  //   img.addEventListener("mousemove", function(event) {
-  //     console.log("mouse move");
-  //     coords.innerHTML = "x: " + event.offsetX + " y: " + event.offsetY;
-  //   });
-  // }
-  // onload, scales the map area cor-ordinates based on screen width
-  public handleMapResize() {
-    var ImageMap = function(map) {
-        console.log("scaling area maps..");
-        var n,
-          areas = map.getElementsByTagName("area"),
-          len = areas.length,
-          coords = [],
-          // previousWidth = 839; // image original width replace with window.innerWidth when working on desktop
-          previousWidth = window.innerWidth;
-        for (n = 0; n < len; n++) {
-          coords[n] = areas[n].coords.split(",");
-        }
-        this.resize = function() {
-          var n,
-            m,
-            clen,
-            x = document.body.clientWidth / previousWidth;
-          for (n = 0; n < len; n++) {
-            clen = coords[n].length;
-            for (m = 0; m < clen; m++) {
-              coords[n][m] *= x;
-            }
-            areas[n].coords = coords[n].join(",");
-          }
-          previousWidth = document.body.clientWidth;
-          return true;
-        };
-        window.onresize = this.resize;
-      },
-      imageMap = new ImageMap(document.getElementById("map_id"));
-    imageMap.resize();
   }
 }

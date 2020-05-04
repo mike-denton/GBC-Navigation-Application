@@ -3,34 +3,84 @@
     <ion-title>
       GBC Navigation
     </ion-title>
-    <ion-button size='medium' color='primary' slot='end' (click)="fromParkingsPicker()">List of Origins</ion-button>
-
-    <ion-button size='medium' color='tertiary' slot='end' (click)="displayAllOriginPoints()">
+    <ion-button
+      size="medium"
+      color="primary"
+      slot="end"
+      (click)="fromParkingsPicker()"
+      >List of Origins</ion-button
+    >
+    <ion-button
+      size="medium"
+      color="tertiary"
+      slot="end"
+      (click)="displayAllOriginPoints()"
+    >
       Display all Origins &nbsp;
-      <ion-icon name="locate"></ion-icon>    
+      <ion-icon name="locate"></ion-icon>
     </ion-button>
-
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
     <div id="container">
-      <img id="floor" #image class='img' draggable="false" src="assets/images/campusmap.png" alt="exterior campus map" usemap="#exterior-map" />
-      <map name="exterior-map" >
+      <img
+        id="floor"
+        #image
+        class="img"
+        draggable="false"
+        src="assets/images/campusmap.png"
+        alt="exterior campus map"
+        usemap="#exterior-map"
+      />
+      <map name="exterior-map">
         <!-- Parkings Area -->
-        <area alt="parkingA" id="parkingA" title="parking A" (click)="sendParkingId($event)" coords="272,279,394,304" shape="rect">
-        <area alt="parkingB" id="parkingB" title="parking B" (click)="sendParkingId($event)" coords="155,258,198,287" shape="rect">
-
+        <area
+          alt="parkingA"
+          id="parkingA"
+          title="parking A"
+          (click)="sendParkingId($event)"
+          coords="272,279,394,304"
+          shape="rect"
+        />
+        <area
+          alt="parkingB"
+          id="parkingB"
+          title="parking B"
+          (click)="sendParkingId($event)"
+          coords="155,258,198,287"
+          shape="rect"
+        />
         <!-- Building C -->
-        <area alt="buildingC" id="buildingC" title="building C" (click)=sendBuildingId($event) coords="270,107,237,107,236,116,221,116,220,126,204,127,204,149,191,149,190,143,167,144,167,162,175,162,176,178,192,178,193,191,220,192,220,169,231,170,232,155,271,155" shape="poly">
+        <area
+          alt="buildingC"
+          id="buildingC"
+          title="building C"
+          (click)="sendBuildingId($event)"
+          coords="270,107,237,107,236,116,221,116,220,126,204,127,204,149,191,149,190,143,167,144,167,162,175,162,176,178,192,178,193,191,220,192,220,169,231,170,232,155,271,155"
+          shape="poly"
+        />
         <!-- Building D -->
-        <area alt="buildingD" id="buildingD" title="building D" (click)=sendBuildingId($event)  coords="194,217,208,217,208,226,222,217,222,190,190,190,166,192,164,231,194,231" shape="poly">
+        <area
+          alt="buildingD"
+          id="buildingD"
+          title="building D"
+          (click)="sendBuildingId($event)"
+          coords="194,217,208,217,208,226,222,217,222,190,190,190,166,192,164,231,194,231"
+          shape="poly"
+        />
         <!-- Building E -->
-        <area alt="buildingE" id="buildingE" title="building E" (click)=sendBuildingId($event) coords="220,170,222,212,266,212,256,168" shape="poly">
-
+        <area
+          alt="buildingE"
+          id="buildingE"
+          title="building E"
+          (click)="sendBuildingId($event)"
+          coords="220,170,222,212,266,212,256,168"
+          shape="poly"
+        />
       </map>
-      <canvas id="mapCanvas" #canvasEl width=578 height=438></canvas>
+      <canvas id="mapCanvas" #canvasEl width="578" height="438"></canvas>
     </div>
   </div>
 </ion-content>

@@ -2,13 +2,23 @@
   <ion-toolbar>
     <ion-title> D Building</ion-title>
 
-    <ion-button size='medium' color='primary' slot='end' (click)="fromStaircases()">List of Origins</ion-button>
+    <ion-button
+      size="medium"
+      color="primary"
+      slot="end"
+      (click)="fromStaircases()"
+      >List of Origins</ion-button
+    >
 
-    <ion-button size='medium' color='tertiary' slot='end' (click)="displayAllOriginPoints()">
+    <ion-button
+      size="medium"
+      color="tertiary"
+      slot="end"
+      (click)="displayAllOriginPoints()"
+    >
       Display all Origins &nbsp;
-      <ion-icon name="locate"></ion-icon>    
+      <ion-icon name="locate"></ion-icon>
     </ion-button>
-    
   </ion-toolbar>
 </ion-header>
 
@@ -26,9 +36,7 @@
         alt="D Building Second Floor"
         usemap="#dBuildingFloor2-map"
         (load)="handleMapResize()"
-        />
-        <!--(load)="handleMouseMove();handleMapResize()"-->
-
+      />
       <map name="dBuildingFloor2-map" id="map_id" #areaMap>
         <area
           alt="stairCaseD"
@@ -38,7 +46,6 @@
           coords="35,552,36,583,67,583,67,551"
           shape="poly"
         />
-
         <area
           alt="stairCaseD_b"
           id="stairCaseD_b"
@@ -63,23 +70,14 @@
           coords="735,217,764,216,764,242,736,243"
           shape="poly"
         />
-        <area 
-          alt="elevator_a" 
+        <area
+          alt="elevator_a"
           id="elevator_a"
-          title="elevator_a" 
+          title="elevator_a"
           (click)="sendStairCaseId($event)"
-          coords="365,463,365,485,389,485,388,462" 
+          coords="365,463,365,485,389,485,388,462"
           shape="poly"
         />
-
-        <!-- <area
-        alt="entrance"
-        id="entrance"
-        title="entrance"
-        (click)="sendStairCaseId($event)"
-        coords="668,203,720,227,643,272,628,226"
-        shape="poly"
-      /> -->
       </map>
       <canvas id="mapCanvas" #canvasEl width="839" height="651"></canvas>
     </div>
