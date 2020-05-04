@@ -35,13 +35,13 @@ export class DBuildingFloor2Page implements OnInit {
     this.fromStaircases();
   }
 
-  private sendStairCaseId(event) {
+  public sendStairCaseId(event) {
     this.roomsPicker(event.target.id);
     this.stairCase = event.target.id;
     this.dps.drawDbuildingFloor2_OriginMarker(this.stairCase);
   }
 
-  private displayAllOriginPoints() {
+  public displayAllOriginPoints() {
     this.dps.display_All_Dbuilding_Origin();
   }
 

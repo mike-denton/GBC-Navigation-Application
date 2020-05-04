@@ -35,13 +35,13 @@ export class CBuildingFloor2Page implements OnInit {
     this.fromStaircases();
   }
 
-  private sendStairCaseId(event) {
+  public sendStairCaseId(event) {
     this.stairCase = event.target.id;
     this.roomsPicker(event.target.id);
     this.dps.drawCbuildingFloor2_OriginMarker(this.stairCase);
   }
 
-  private displayAllOriginPoints() {
+  public displayAllOriginPoints() {
     this.dps.display_All_Cbuilding_Origin();
   }
 

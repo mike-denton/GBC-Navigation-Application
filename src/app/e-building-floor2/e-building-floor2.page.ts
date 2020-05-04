@@ -35,13 +35,13 @@ export class EBuildingFloor2Page implements OnInit {
     this.fromStaircases();
   }
 
-  private sendStairCaseId(event) {
+  public sendStairCaseId(event) {
     this.roomsPicker(event.target.id);
     this.stairCase = event.target.id;
     this.dps.drawEbuildingFloor2_OriginMarker(this.stairCase);
   }
 
-  private displayAllOriginPoints() {
+  public displayAllOriginPoints() {
     this.dps.display_All_Ebuilding_Origins();
   }
 

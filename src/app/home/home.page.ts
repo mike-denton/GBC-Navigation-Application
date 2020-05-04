@@ -29,17 +29,17 @@ export class HomePage {
       .nativeElement as HTMLCanvasElement).getContext("2d");
   }
 
-  private sendParkingId(event) {
+  public sendParkingId(event) {
     this.buildingsPicker(this.parking);
     this.parking = event.target.id;
     this.dps.drawOriginMarker(this.parking);
   }
 
-  private displayAllOriginPoints() {
+  public displayAllOriginPoints() {
     this.dps.display_All_Parking_Origins();
   }
 
-  private sendBuildingId(event) {
+  public sendBuildingId(event) {
     this.building = event.target.id;
     switch (this.building) {
       case "buildingC":

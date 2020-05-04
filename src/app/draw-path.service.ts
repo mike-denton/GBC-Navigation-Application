@@ -7,8 +7,8 @@ import { PickerOptions } from "@ionic/core";
 })
 export class DrawPathService {
   public context: CanvasRenderingContext2D;
-  private destinationMarker = new Image();
-  private originMarker = new Image();
+   destinationMarker = new Image();
+   originMarker = new Image();
 
   constructor() {
     this.destinationMarker.src = "assets/images/map-destination-marker.png";
