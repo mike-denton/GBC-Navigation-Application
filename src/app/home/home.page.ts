@@ -27,7 +27,6 @@ export class HomePage {
   ngAfterViewInit() {
     this.dps.context = (this.canvasEl
       .nativeElement as HTMLCanvasElement).getContext("2d");
-    this.fromParkingsPicker();
   }
 
   private sendParkingId(event) {
@@ -38,10 +37,6 @@ export class HomePage {
 
   private displayAllOriginPoints() {
     this.dps.display_All_Parking_Origins();
-  }
-
-  private func_disable() {
-    console.log("hnererer");
   }
 
   private sendBuildingId(event) {
