@@ -1,8 +1,8 @@
 {
-  "name": "GBC-Navigation",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "name": "GBC-Navigate",
+  "version": "1.0.0",
+  "author": "ADZ SCM & SCT",
+  "homepage": "https://www.georgebrown.ca/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -83,8 +83,7 @@
       "cordova-plugin-splashscreen": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ]
   }
 }
