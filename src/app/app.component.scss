@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1E88E5;
+    background: #FFC300;
 }
 
 .loader {
@@ -40,7 +40,7 @@
     content: '';
   }
   .loader:after {
-    background: #1E88E5;
+    background: #FFC300;
     width: 75%;
     height: 75%;
     border-radius: 50%;
