@@ -32,6 +32,8 @@
     "core-js": "^2.5.4",
     "es6-promise-plugin": "^4.2.2",
     "ionic": "^5.4.16",
+    "ionic-image-viewer": "^0.2.0",
+    "ionic-img-viewer": "^2.9.0",
     "native-run": "^0.3.0",
     "rxjs": "~6.5.1",
     "rxjs-compat": "^6.5.5",

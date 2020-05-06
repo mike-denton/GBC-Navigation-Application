@@ -32,6 +32,12 @@ export class CBuildingFloor2Page implements OnInit {
   ngOnInit() {
     this.dps.context = (this.canvasEl
       .nativeElement as HTMLCanvasElement).getContext("2d");
+      this.dps.context.clearRect(
+        0,
+        0,
+        this.dps.context.canvas.width,
+        this.dps.context.canvas.height
+      );
     this.fromStaircases();
   }
 
@@ -189,21 +195,24 @@ export class CBuildingFloor2Page implements OnInit {
               text: "--- From which staircases or elevators? ---",
               value: "null",
             },
-            { text: "Staircase A (SA)", value: "stairCaseA" },
-            { text: "Staircase B (SB)", value: "stairCaseB" },
-            { text: "Staircase C (SC)", value: "stairCaseC" },
-            { text: "Staircase D (SD)", value: "stairCaseD" },
-            { text: "Staircase E (SE)", value: "stairCaseE" },
-            { text: "Staircase F (SF)", value: "stairCaseF" },
-            { text: "Staircase G (SG)", value: "stairCaseG" },
-            { text: "Elevator A (EA)", value: "elevatorA" },
-            { text: "Elevator B (EB)", value: "elevatorB" },
+            { text: "C201", value: "stairCaseC" },
+            { text: "C210", value: "elevatorB" },
+            { text: "C212", value: "stairCaseF" },
+            { text: "C234", value: "stairCaseB" },
+            { text: "C246", value: "stairCaseA" },
+            { text: "C256", value: "stairCaseG" },
           ],
         },
       ],
     };
 
     let picker = await this.pickerCtrl.create(stairsRooms);
+    this.dps.context.clearRect(
+      0,
+      0,
+      this.dps.context.canvas.width,
+      this.dps.context.canvas.height
+    );
     picker.present();
     picker.onDidDismiss().then(async (data) => {
       let staircases_elevators = await picker.getColumn("staircases_elevators");

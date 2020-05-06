@@ -16,7 +16,7 @@ import { PickerOptions } from "@ionic/core";
 })
 export class EBuildingFloor2Page implements OnInit {
   private originMarker = new Image();
-
+  
   @ViewChild("canvasEl", { static: true }) canvasEl: ElementRef;
   @ViewChild("areaMap", { static: true }) areaMap: ElementRef;
 
@@ -32,6 +32,12 @@ export class EBuildingFloor2Page implements OnInit {
   ngOnInit() {
     this.dps.context = (this.canvasEl
       .nativeElement as HTMLCanvasElement).getContext("2d");
+      this.dps.context.clearRect(
+        0,
+        0,
+        this.dps.context.canvas.width,
+        this.dps.context.canvas.height
+      );
     this.fromStaircases();
   }
 
@@ -175,18 +181,22 @@ export class EBuildingFloor2Page implements OnInit {
               value: "null",
             },
             { text: "Front Entrance", value: "entrance" },
-            { text: "Staircase A (SA)", value: "stairCaseA" },
-            { text: "Staircase B (SB)", value: "stairCaseB" },
-            { text: "Staircase C (SC)", value: "stairCaseC" },
-            { text: "Staircase D (SD)", value: "stairCaseD" },
-            { text: "Staircase E (SE)", value: "stairCaseE" },
-            { text: "Elevator (EA)", value: "elevator" },
+            { text: "E219", value: "stairCaseA" },
+            { text: "E225", value: "stairCaseD" },
+            { text: "E244", value: "stairCaseE" },
+            { text: "Main Lobby", value: "elevator" },
           ],
         },
       ],
     };
 
     let picker = await this.pickerCtrl.create(staircase_elevator);
+    this.dps.context.clearRect(
+      0,
+      0,
+      this.dps.context.canvas.width,
+      this.dps.context.canvas.height
+    );
     picker.present();
     picker.onDidDismiss().then(async (data) => {
       let staircase_elevator = await picker.getColumn("staircase_elevator");
@@ -260,7 +270,7 @@ export class EBuildingFloor2Page implements OnInit {
             break;
 
           case "stairCaseE":
-            this.dps.drawPathFromStairCaseE(
+            this.dps.drawEbuildingFloor2_OriginMarker(
               staircase_elevator.options[staircase_elevator.selectedIndex].value
             );
             this.roomsPicker(

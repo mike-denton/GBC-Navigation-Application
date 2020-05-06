@@ -32,6 +32,12 @@ export class DBuildingFloor2Page implements OnInit {
   ngOnInit() {
     this.dps.context = (this.canvasEl
       .nativeElement as HTMLCanvasElement).getContext("2d");
+      this.dps.context.clearRect(
+        0,
+        0,
+        this.dps.context.canvas.width,
+        this.dps.context.canvas.height
+      );
     this.fromStaircases();
   }
 
@@ -113,7 +119,6 @@ export class DBuildingFloor2Page implements OnInit {
             this.dps.context.canvas.height
           );
         }
-        console.log(staircase_elevator);
         switch (staircase_elevator) {
           case "stairCaseD":
             this.dps.drawPathFromStairCaseD_x(
@@ -179,17 +184,22 @@ export class DBuildingFloor2Page implements OnInit {
               text: "--- From which staircases or elevator? ---",
               value: "null",
             },
-            { text: "Staircase A (SA)", value: "stairCaseD" },
-            { text: "Staircase B (SB)", value: "stairCaseD_b" },
-            { text: "Staircase C (SC)", value: "stairCaseD_c" },
-            { text: "Staircase D (SD)", value: "stairCaseD_d" },
-            { text: "Elevator (EA)", value: "elevator_a" },
+            { text: "D201", value: "stairCaseD" },
+            { text: "D214", value: "stairCaseD_b" },
+            { text: "D222", value: "stairCaseD_c" },
+            { text: "D245", value: "stairCaseD_d" },
           ],
         },
       ],
     };
 
     let picker = await this.pickerCtrl.create(staircase_elevator);
+    this.dps.context.clearRect(
+      0,
+      0,
+      this.dps.context.canvas.width,
+      this.dps.context.canvas.height
+    );
     picker.present();
     picker.onDidDismiss().then(async (data) => {
       let staircase_elevator = await picker.getColumn("staircase_elevator");
@@ -205,9 +215,6 @@ export class DBuildingFloor2Page implements OnInit {
             this.dps.context.canvas.height
           );
         }
-        console.log(
-          staircase_elevator.options[staircase_elevator.selectedIndex].value
-        );
         switch (
           staircase_elevator.options[staircase_elevator.selectedIndex].value
         ) {
