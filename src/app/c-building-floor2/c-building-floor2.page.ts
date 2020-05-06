@@ -71,7 +71,7 @@ export class CBuildingFloor2Page implements OnInit {
         {
           name: "rooms",
           options: [
-            { text: "--- Please Select ---", value: "null" },
+            { text: "--- To which destination point? ---", value: "null" },
             { text: "C201", value: "c201" },
             { text: "C210", value: "c210" },
             { text: "C211", value: "c211" },
@@ -192,7 +192,7 @@ export class CBuildingFloor2Page implements OnInit {
           name: "staircases_elevators",
           options: [
             {
-              text: "--- From which staircases or elevators? ---",
+              text: "--- From which origin point? ---",
               value: "null",
             },
             { text: "C201", value: "stairCaseC" },

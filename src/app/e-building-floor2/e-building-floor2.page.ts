@@ -71,7 +71,7 @@ export class EBuildingFloor2Page implements OnInit {
         {
           name: "rooms",
           options: [
-            { text: "--- Please Select ---", value: "null" },
+            { text: "--- To which destination point? ---", value: "null" },
             { text: "E201", value: "e201" },
             { text: "E203", value: "e203" },
             { text: "E208", value: "e208" },
@@ -177,7 +177,7 @@ export class EBuildingFloor2Page implements OnInit {
           name: "staircase_elevator",
           options: [
             {
-              text: "--- From which staircases or elevator? ---",
+              text: "--- From which origin point? ---",
               value: "null",
             },
             { text: "Front Entrance", value: "entrance" },
