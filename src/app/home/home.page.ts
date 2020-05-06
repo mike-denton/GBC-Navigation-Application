@@ -4,6 +4,8 @@ import { PickerOptions } from "@ionic/core";
 import { DrawPathService } from "../draw-path.service";
 import { Router } from "@angular/router";
 
+import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
@@ -21,7 +23,8 @@ export class HomePage {
     private pickerCtrl: PickerController,
     private renderer: Renderer2,
     private drawPathService: DrawPathService,
-    private router: Router
+    private router: Router,
+    private toastController: ToastController
   ) {}
 
   ngAfterViewInit() {
@@ -56,6 +59,24 @@ export class HomePage {
     }
   }
 
+  async presentToastWithOptions() {
+    // document.getElementsByClassName('toast-message').color = "#000000";
+    setTimeout(function () {     
+      document.getElementsByClassName('toast-message');
+    }, 0);
+
+    const toast = await this.toastController.create({
+      color: "warning",
+      message: 'To navigate inside the building click on the red pin at the building entrance',
+      buttons: [
+         {
+          text: 'OK'
+        }
+      ]
+    });
+    toast.present();
+  }
+
   async buildingsPicker(parking) {
     this.parking = parking;
 
@@ -78,7 +99,7 @@ export class HomePage {
         {
           name: "buildings",
           options: [
-            { text: "--- Please Select ---", value: "null" },
+            { text: "--- To Which Building? ---", value: "null" },
             { text: "Building C", value: "buildingC" },
             { text: "Building D", value: "buildingD" },
             { text: "Building E", value: "buildingE" },
@@ -103,10 +124,14 @@ export class HomePage {
         switch (this.parking) {
           case "parkingA":
             this.dps.drawPathFromParkingA(col.options[col.selectedIndex].value);
+            this.presentToastWithOptions();
             break;
+
           case "parkingB":
             this.dps.drawPathFromParkingB(col.options[col.selectedIndex].value);
+            this.presentToastWithOptions();
             break;
+
           default:
             break;
         }

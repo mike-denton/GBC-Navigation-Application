@@ -65,7 +65,7 @@ export class DBuildingFloor2Page implements OnInit {
         {
           name: "rooms",
           options: [
-            { text: "--- Please Select ---", value: "null" },
+            { text: "--- To which destination point? ---", value: "null" },
             { text: "Emergency Exit", value: "emg" },
             { text: "D201", value: "d201" },
             { text: "D202", value: "d202" },
@@ -176,7 +176,7 @@ export class DBuildingFloor2Page implements OnInit {
           name: "staircase_elevator",
           options: [
             {
-              text: "--- From which staircases or elevator? ---",
+              text: "--- From which origin point? ---",
               value: "null",
             },
             { text: "Staircase A (SA)", value: "stairCaseD" },
