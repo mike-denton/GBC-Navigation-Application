@@ -1,6 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <div class="center">
+
+      <ion-button
+        size="medium"
+        color="tertiary"
+        slot="end"
+        (click)="displayAllOriginPoints()">
+        Display Origins &nbsp;
+        <ion-icon name="locate"></ion-icon>
+      </ion-button>
+  
       <ion-button
         size="medium"
         color="primary"
@@ -9,14 +19,7 @@
         Navigate &nbsp;
         <ion-icon name="navigate"></ion-icon>
       </ion-button>
-      <ion-button
-        size="medium"
-        color="tertiary"
-        slot="end"
-        (click)="displayAllOriginPoints()">
-        Display all Origins &nbsp;
-        <ion-icon name="locate"></ion-icon>
-      </ion-button>
+  
     </div>
   </ion-toolbar>
 </ion-header>

@@ -60,14 +60,10 @@ export class HomePage {
   }
 
   async presentToastWithOptions() {
-    // document.getElementsByClassName('toast-message').color = "#000000";
-    setTimeout(function () {     
-      document.getElementsByClassName('toast-message');
-    }, 0);
-
     const toast = await this.toastController.create({
+      id: "toast",
       color: "warning",
-      message: 'To navigate inside the building click on the red pin at the building entrance',
+      message: 'To navigate inside the building click on the red pin at the building entrance.',
       buttons: [
          {
           text: 'OK'
@@ -75,6 +71,7 @@ export class HomePage {
       ]
     });
     toast.present();
+    document.getElementById('toast').style.color='black';
   }
 
   async buildingsPicker(parking) {
@@ -124,14 +121,14 @@ export class HomePage {
         switch (this.parking) {
           case "parkingA":
             this.dps.drawPathFromParkingA(col.options[col.selectedIndex].value);
-            this.presentToastWithOptions();
+            if (col.options[col.selectedIndex].value != "null")
+              this.presentToastWithOptions();
             break;
-
           case "parkingB":
             this.dps.drawPathFromParkingB(col.options[col.selectedIndex].value);
-            this.presentToastWithOptions();
+            if (col.options[col.selectedIndex].value != "null")
+              this.presentToastWithOptions();
             break;
-
           default:
             break;
         }

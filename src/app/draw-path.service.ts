@@ -18,6 +18,12 @@ export class DrawPathService {
   // Parking Markers Main Page
   // * MAIN PAGE START *
   public display_All_Parking_Origins() {
+    this.context.clearRect(
+      0,
+      0,
+      this.context.canvas.width,
+      this.context.canvas.height
+    );
     this.context.drawImage(this.originMarker, 315, 260);
     this.context.drawImage(this.originMarker, 160, 243);
   }
