@@ -195,7 +195,7 @@ export class CBuildingFloor2Page implements OnInit {
               text: "--- From which origin point? ---",
               value: "null",
             },
-            { text: "C201", value: "stairCaseC" },
+            { text: "Loading Dock", value: "stairCaseC" },
             { text: "C210", value: "elevatorB" },
             { text: "C212", value: "stairCaseF" },
             { text: "C234", value: "stairCaseB" },
