@@ -196,7 +196,7 @@ export class CBuildingFloor2Page implements OnInit {
               value: "null",
             },
             { text: "Loading Dock", value: "stairCaseC" },
-            { text: "C210", value: "elevatorB" },
+            { text: "C201", value: "elevatorB" },
             { text: "C212", value: "stairCaseF" },
             { text: "C234", value: "stairCaseB" },
             { text: "C246", value: "stairCaseA" },
